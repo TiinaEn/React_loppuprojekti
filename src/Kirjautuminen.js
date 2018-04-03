@@ -61,34 +61,7 @@ if (cognitoUser != null) {
     });
 }
 
-//Authenticate a User
 
-var authenticationData = {
-    Username : 'username',
-    Password : 'password',
-};
-var authenticationDetails = new AWSCognito.CognitoIdentityServiceProvider.AuthenticationDetails(authenticationData);
-var poolData = { UserPoolId : 'eu-west-1_acxXq42Jw',
-    ClientId : '15j8f0cdngfhpk65904puq4pqj'
-};
-var userPool = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
-var userData = {
-    Username : 'username',
-    Pool : userPool
-};
-var cognitoUser = new AWSCognito.CognitoIdentityServiceProvider.CognitoUser(userData);
-cognitoUser.authenticateUser(authenticationDetails, {
-    onSuccess: function (result) {
-        console.log('access token + ' + result.getAccessToken().getJwtToken());
-        /*Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer*/
-        console.log('idToken + ' + result.idToken.jwtToken);
-    },
-
-    onFailure: function(err) {
-        alert(err);
-    },
-
-});
 
 //Enable MFA for a User Pool
 
@@ -170,4 +143,38 @@ cognitoUser.changePassword('oldPassword', 'newPassword', function(err, result) {
     }
     console.log('call result: ' + result);
 });
-Forgotten P
+
+
+//Forgotten Password Flow
+
+cognitoUser.forgotPassword({
+    onSuccess: function (result) {
+        console.log('call result: ' + result);
+    },
+    onFailure: function(err) {
+        alert(err);
+    },
+    inputVerificationCode() {
+        var verificationCode = prompt('Please input verification code ' ,'');
+        var newPassword = prompt('Enter new password ' ,'');
+        cognitoUser.confirmPassword(verificationCode, newPassword, this);
+    }
+});
+
+//Delete a User
+
+cognitoUser.deleteUser(function(err, result) {
+    if (err) {
+        alert(err);
+        return;
+    }
+    console.log('call result: ' + result);
+});
+
+//Sign a User Out
+
+if (cognitoUser != null) {
+    cognitoUser.signOut();
+}
+
+
