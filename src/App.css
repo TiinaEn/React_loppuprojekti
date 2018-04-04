@@ -26,3 +26,18 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.nav a {
+  color: beige;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 14px 20px;
+  text-transform: uppercase;
+}
+
+.nav li {
+  display: inline;
+}
+
+.nav{
+  background-color: darkslategrey;
+}
