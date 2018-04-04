@@ -5,9 +5,10 @@ import '../App.css';
 class Browse extends Component {
     render() {
         return (
-            <div className="Home">
+            <div className="Browse">
 
-                <h1>Kolmas</h1>
+                <h1>Destinations</h1>
+                <div>Lista tallennettuja maita, joiden jokaisen alla lista kyseisen maan tallennetuista kaupungeista</div>
 
             </div>
         );

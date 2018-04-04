@@ -19,15 +19,33 @@ class MapComponent extends Component {
                 zoom: 5,
                 mapTypeId: 'roadmap'
             })
-            this.map = new maps.Map(node, mapConfig);
 
-            var marker = new google.maps.Marker({
+            var map = new maps.Map(node, mapConfig);
+
+            map.addListener('click', function(event) {
+                placeMarker(event.latLng, map);
+            })
+            
+            function placeMarker(latLng, map) {
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map
+                });
+                map.panTo(latLng);
+
+                google.maps.event.addListener(marker, 'click', function() {
+                   infoWindow.open(map, marker);
+                });
+            }
+
+            /*var marker = new google.maps.Marker({
                 position: {lat: 60.192059, lng: 24.945831},
                 map: this.map,
                 draggable:true,
-                /*icon: {
-                    url: "https://www.freeiconspng.com/images/red-arrow-png"}*/
-                        });
+                /!*icon: {
+                    url: "https://www.freeiconspng.com/images/red-arrow-png"}*!/
+                        });*/
+
             var infoWindow = new google.maps.InfoWindow({
                 content: '<div>' +
                     '<table>' +
@@ -47,13 +65,6 @@ class MapComponent extends Component {
             var messageWindow = new google.maps.InfoWindow({
                content: '<div>Location saved</div>'
             });
-            google.maps.event.addListener(marker, 'click', function () {
-                infoWindow.open(this.map, marker);
-            });
-            marker.addListener('click', function () {
-                infoWindow.open(this.map, marker);
-            });
-
         }
     }
 
