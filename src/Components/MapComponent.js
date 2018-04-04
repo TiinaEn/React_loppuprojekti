@@ -25,7 +25,7 @@ class MapComponent extends Component {
             map.addListener('click', function(event) {
                 placeMarker(event.latLng, map);
             })
-            
+
             function placeMarker(latLng, map) {
                 var marker = new google.maps.Marker({
                     position: latLng,
@@ -36,15 +36,8 @@ class MapComponent extends Component {
                 google.maps.event.addListener(marker, 'click', function() {
                    infoWindow.open(map, marker);
                 });
-            }
 
-            /*var marker = new google.maps.Marker({
-                position: {lat: 60.192059, lng: 24.945831},
-                map: this.map,
-                draggable:true,
-                /!*icon: {
-                    url: "https://www.freeiconspng.com/images/red-arrow-png"}*!/
-                        });*/
+            }
 
             var infoWindow = new google.maps.InfoWindow({
                 content: '<div>' +
@@ -65,8 +58,10 @@ class MapComponent extends Component {
             var messageWindow = new google.maps.InfoWindow({
                content: '<div>Location saved</div>'
             });
+
         }
     }
+
 
     render() {
         const style = {
@@ -81,6 +76,7 @@ class MapComponent extends Component {
         )
     }
 }
+
 export default MapComponent;
 
 

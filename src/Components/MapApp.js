@@ -7,9 +7,7 @@ class MapApp extends Component {
     render() {
         return (
             <div className="MapApp">
-                < MapComponent google={this.props.google}/>
-
-
+                <MapComponent google={this.props.google}/>
             </div>
         );
     }

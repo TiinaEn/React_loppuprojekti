@@ -43,7 +43,6 @@ class Navigation extends Component {
                         <li><a href="/createnew">New note</a></li>
                         <li><a href="/browse">Browse</a></li>
                         <li><a href="/profile">Profile</a></li>
-
                     </ul>
                     <ul class="pull-right">
                         <li><input type="text" placeholder="Search"/></li>
