@@ -1,21 +1,44 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Login from './Components/Login'
+import CreateEntry from './Components/CreateEntry'
+import Browse from './Components/Browse'
+import Fourth from './Components/Fourth'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+class App extends Component{
+    render () {
+        return (
+            <Router>
+                <div className="App">
+                    <Navigation/>
+
+                    <Switch>
+                        <Route exact path="/login" component={Login}/>
+                        <Route exact path="/createnew" component={CreateEntry}/>
+                        <Route exact path="/Browse" component={Browse}/>
+                        <Route exact path="/fourth" component={Fourth}/>
+                    </Switch>
+
+                </div>
+            </Router>
+        );
+    }
+}
+class Navigation extends Component {
+    render () {
+        return (
+            <div>
+                <ul>
+                    <li><a href ="/createnew">Uusi merkintä</a></li>
+                    <li><a href ="/browse">Selaa</a></li>
+                    <li><a href ="/fourth">Neljäs</a></li>
+                    <li><input type="text" placeholder="Etsi"/></li>
+                    <li><a href = "/login">Log in</a></li>
+                </ul>
+            </div>
+        )
+    }
 }
 
 export default App;
