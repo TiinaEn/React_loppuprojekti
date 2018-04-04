@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 
 import '../App.css';
 
-class Home extends Component {
+class Profile extends Component {
     render() {
         return (
-            <div className="Home">
+            <div className="Profile">
 
-                <h1>Tuleeko tähän jotain?</h1>
+                <h1>Profile</h1>
 
             </div>
         );
     }
 }
 
-export default Home;
+export default Profile;
