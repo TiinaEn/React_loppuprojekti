@@ -19,18 +19,18 @@ class CreateEntry extends Component {
             <div className="xx">
                 <form onSubmit={this.handleSubmit}>
 
-                    <label>Name: </label>
+                    <label>Title: </label>
                     <input type="text" value={this.state.name} onChange={this.handleChange}/>
                     <br/>
-                    <label>Kategoria: </label>
+                    <label>Category: </label>
                     <select>
-                        <option value=''>Ravintolat</option>
-                        <option value=''>Hotellit</option>
-                        <option value=''>Kaupat</option>
-                        <option value=''>Nähtävyydet</option>
-                        <option value=''>Muut</option>
+                        <option value=''>Restaurants</option>
+                        <option value=''>Hotels</option>
+                        <option value=''>Shops</option>
+                        <option value=''>Sights</option>
+                        <option value=''>Other</option>
                     </select>
-                    <label>Kuvaus: </label>
+                    <label>Description: </label>
                     <textarea type="text" placeholder="Muistiinpanon kuvaus" value={this.state.description} onChange={this.handleChange}/>
 
                     <input type="submit" value="Luo" onClick={this.handleCreateClick}/>

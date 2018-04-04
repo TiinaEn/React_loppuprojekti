@@ -7,7 +7,7 @@ class Browse extends Component {
         return (
             <div className="Home">
 
-                <h1>Kolmas</h1>
+                <h1>Merkintöjen hakua....</h1>
 
             </div>
         );

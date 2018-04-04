@@ -9,6 +9,7 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import MapApp from "./Components/MapApp";
 
 
+
 class App extends Component{
     render () {
         return (
@@ -35,15 +36,19 @@ class App extends Component{
 class Navigation extends Component {
     render () {
         return (
-            <div>
-                <ul>
+            <div class="nav">
+                <div class="container">
+                <ul class="pull-left">
+                    <li><a href = "/home">Main page</a></li>
                     <li><a href ="/createnew">Uusi merkintä</a></li>
                     <li><a href ="/browse">Selaa</a></li>
                     <li><a href ="/fourth">Neljäs</a></li>
                     <li><input type="text" placeholder="Etsi"/></li>
-                    <li><a href = "/login">Log in</a></li>
-                    <li><a href = "/home">Main page</a></li>
                 </ul>
+                    <ul class="pull-right">
+                    <li><a href = "/login">Log in</a></li>
+                </ul>
+            </div>
             </div>
         )
     }
