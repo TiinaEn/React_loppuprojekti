@@ -10,7 +10,7 @@ class Login extends Component {
         super(props);
 
         this.state = {
-            uname: '',
+            username: '',
             password: ''
         };
     }
@@ -24,7 +24,7 @@ class Login extends Component {
         event.preventDefault();
     }
     validateForm() {
-        return this.state.uname.length >0 && this.state.password.length >0
+        return this.state.username.length >0 && this.state.password.length >0
     }
 
 
@@ -32,12 +32,12 @@ class Login extends Component {
         return (
             <div className="Login">
                 <form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="uname">
+                    <FormGroup controlId="username">
                         <ControlLabel>Username</ControlLabel>
                         <FormControl
                             autoFocus
                             type="text"
-                            value={this.state.uname}
+                            value={this.state.username}
                             onChange={this.handleChange}
                         />
                     </FormGroup>

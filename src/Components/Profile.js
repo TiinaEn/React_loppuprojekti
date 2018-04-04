@@ -8,6 +8,13 @@ class Profile extends Component {
             <div className="Profile">
 
                 <h1>Profile</h1>
+                {/*<div>Username</div>*/}
+                {/*<form action="">Email</form>*/}
+                {/*<form action="">Password</form>*/}
+                {/*<form action="">Description</form>*/}
+                {/*<form action="">Add Friends</form>*/}
+                {/*<div>List Friends</div>*/}
+
 
             </div>
         );
