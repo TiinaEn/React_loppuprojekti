@@ -24,9 +24,35 @@ class MapComponent extends Component {
             var marker = new google.maps.Marker({
                 position: {lat: 60.192059, lng: 24.945831},
                 map: this.map,
-                icon: {
-                    url: "https://www.freeiconspng.com/images/red-arrow-png"}
+                draggable:true,
+                /*icon: {
+                    url: "https://www.freeiconspng.com/images/red-arrow-png"}*/
                         });
+            var infoWindow = new google.maps.InfoWindow({
+                content: '<div>' +
+                    '<table>' +
+                    '<tr><td>Name:</td><td><input type="text" id="name"/></td></tr>'+
+                    '<tr><td>Address:</td> <td><input type="text" id="address"/></td></tr>'+
+                    '<tr><td>Type:</td><td><select id="type">' +
+                    '<option value="Restaurant">Restaurant</option>'+
+                    '<option value="Hotel">Hotel</option>'+
+                    '<option value="Shop">Shop</option>'+
+                    '<option value="Sight">Sight</option>'+
+                '</select></td></tr>'+
+                '<tr><td></td><td><input type="button" value="Save" onclick="saveData()"/></td></tr>'+
+                '</table>'+
+                '</div>'
+            });
+
+            var messageWindow = new google.maps.InfoWindow({
+               content: '<div>Location saved</div>'
+            });
+            google.maps.event.addListener(marker, 'click', function () {
+                infoWindow.open(this.map, marker);
+            });
+            marker.addListener('click', function () {
+                infoWindow.open(this.map, marker);
+            });
 
         }
     }
