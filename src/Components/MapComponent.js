@@ -19,16 +19,22 @@ class MapComponent extends Component {
                 zoom: 5,
                 mapTypeId: 'roadmap'
             })
-            this.map = new maps.Map(node, mapConfig);
 
-            var marker = new google.maps.Marker({
-                position: {lat: 60.192059, lng: 24.945831},
-                map: this.map,
-                icon: {
-                    url: "https://www.freeiconspng.com/images/red-arrow-png"}
-                        });
+            var map = new maps.Map(node, mapConfig);
 
-        }
+
+            map.addListener('click', function(event) {
+                placeMarker(event.latLng, map);
+            })
+            function placeMarker(latLng, map) {
+               var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map
+                });
+                map.panTo(latLng);
+
+
+        }}
     }
 
     render() {
