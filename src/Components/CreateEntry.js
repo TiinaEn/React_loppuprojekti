@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import '../App.css';
+import MapApp from "./MapApp";
+import MapAutocomplete from "./MapAutocomplete";
 
 class CreateEntry extends Component {
 
@@ -35,7 +37,8 @@ class CreateEntry extends Component {
 
                     <input type="submit" value="Luo" onClick={this.handleCreateClick}/>
                 </form>
-
+                <MapApp/>
+                <MapAutocomplete/>
             </div>
         );
     }

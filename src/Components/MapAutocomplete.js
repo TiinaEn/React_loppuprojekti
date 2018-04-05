@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {geocodeByAddress, geocodeByPlaceId} from 'react-places-autocomplete';
+import {GoogleApiWrapper} from "google-maps-react";
 
 class MapAutocomplete extends Component {
     constructor(props) {
         super(props)
-        this.state = { address: 'San Francisco, CA' }
+        this.state = { address: 'Search' }
         this.onChange = (address) => this.setState({ address })
     }
 
@@ -34,4 +35,6 @@ class MapAutocomplete extends Component {
 
 }
 
-export default MapAutocomplete;
+export default GoogleApiWrapper({
+    apiKey: 'AIzaSyAZEa7IBzFg2qOA5xgGRzlDab9zyDnptKs',
+})(MapAutocomplete)
