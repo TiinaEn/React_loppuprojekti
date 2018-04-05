@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-
 import '../App.css';
-import MapApp from "./MapApp";
-import MapAutocomplete from "./MapAutocomplete";
-import MapComponent from "./MapComponent";
 import MapComponent2 from "./MapComponent2";
 
 class CreateEntry extends Component {

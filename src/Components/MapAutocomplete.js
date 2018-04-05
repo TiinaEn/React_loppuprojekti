@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
-import {geocodeByAddress, geocodeByPlaceId} from 'react-places-autocomplete';
+import {geocodeByAddress} from 'react-places-autocomplete';
 import {GoogleApiWrapper} from "google-maps-react";
 
 class MapAutocomplete extends Component {

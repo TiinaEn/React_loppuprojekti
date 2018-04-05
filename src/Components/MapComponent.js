@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+/*import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';*/
 import ReactDOM from 'react-dom'
 
 
@@ -55,9 +55,9 @@ class MapComponent extends Component {
                 '</div>'
             });
 
-            var messageWindow = new google.maps.InfoWindow({
+            /*var messageWindow = new google.maps.InfoWindow({
                content: '<div>Location saved</div>'
-            });
+            });*/
 
         }
     }
