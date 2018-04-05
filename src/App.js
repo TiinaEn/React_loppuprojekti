@@ -5,7 +5,6 @@ import Login from './Components/Login'
 import CreateEntry from './Components/CreateEntry'
 import Browse from './Components/Browse'
 import Profile from './Components/Profile'
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import MapApp from "./Components/MapApp";
 
 

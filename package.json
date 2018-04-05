@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gmaps.geometry": "^0.5.0",
     "google-maps-react": "^1.1.11",
     "react": "^16.3.1",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.3.1",
+    "react-gmaps": "^1.9.0",
     "react-google-maps-loader": "^4.2.0",
     "react-google-places-suggest": "^3.4.0",
     "react-places-autocomplete": "^6.1.3",
