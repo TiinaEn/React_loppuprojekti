@@ -36,15 +36,15 @@ class App extends Component {
 class Navigation extends Component {
     render() {
         return (
-            <div class="nav">
-                <div class="container">
-                    <ul class="pull-left">
+            <div className="nav">
+                <div className="container">
+                    <ul className="pull-left">
                         <li><a href="/home">Home</a></li>
                         <li><a href="/createnew">New note</a></li>
                         <li><a href="/browse">Browse</a></li>
                         <li><a href="/profile">Profile</a></li>
                     </ul>
-                    <ul class="pull-right">
+                    <ul className="pull-right">
                         <li><input type="text" placeholder="Search"/></li>
                         <li><a href="/logout">Log out</a></li>
                     </ul>

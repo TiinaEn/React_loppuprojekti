@@ -3,7 +3,8 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import ReactDOM from 'react-dom';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {geocodeByAddress, geocodeByPlaceId, getLatLng} from 'react-places-autocomplete';
-import input from "eslint-plugin-jsx-a11y/src/util/implicitRoles/input";
+
+
 
 
 
@@ -25,6 +26,17 @@ class MapComponent2 extends Component {
             })
 
             var map = new maps.Map(node, mapConfig);        //presenting a map on our site
+
+/*            var autocomplete = new google.maps.places.Autocomplete();
+            var place = autocomplete.getPlace;
+            autocomplete.bindTo('bound', map);
+            if (place.geometry.viewport) {
+                map.fitbounds(place.geometry.viewport);
+            }else {
+                map.setCenter(place.geometry.location);
+                map.setZoom(17);*/
+          /*  }*/
+
 
             map.addListener('click', function(event) {      //function for adding a marker on a map
                 placeMarker(event.latLng, map);
@@ -62,9 +74,12 @@ class MapComponent2 extends Component {
             var messageWindow = new google.maps.InfoWindow({
                content: '<div>Location saved</div>'
             });
+
+
         }
         }
-        
+
+
     constructor(props) {
         super(props)
         this.state = { address: 'Search' }
@@ -79,6 +94,7 @@ class MapComponent2 extends Component {
             .then(latLng => console.log('Success', latLng))
             .catch(error => console.error('Error', error))
     }
+
 
 
     render() {
