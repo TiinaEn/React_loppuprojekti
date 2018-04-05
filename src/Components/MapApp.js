@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {GoogleApiWrapper} from 'google-maps-react';
 import MapComponent from "./MapComponent"
+import MapAutocomplete from "./MapAutocomplete";
 
 
 class MapApp extends Component {
@@ -8,6 +9,7 @@ class MapApp extends Component {
         return (
             <div className="MapApp">
                 <MapComponent google={this.props.google}/>
+                <MapAutocomplete/>
             </div>
         );
     }
