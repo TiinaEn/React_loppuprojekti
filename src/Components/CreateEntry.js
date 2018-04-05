@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import '../App.css';
 import MapApp from "./MapApp";
 import MapAutocomplete from "./MapAutocomplete";
+import MapComponent from "./MapComponent";
+import MapComponent2 from "./MapComponent2";
 
 class CreateEntry extends Component {
 
@@ -37,8 +39,7 @@ class CreateEntry extends Component {
 
                     <input type="submit" value="Luo" onClick={this.handleCreateClick}/>
                 </form>
-                <MapApp/>
-                <MapAutocomplete/>
+                <MapComponent2/>
             </div>
         );
     }
