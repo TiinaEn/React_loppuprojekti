@@ -5,13 +5,15 @@ import Login from './Components/Login'
 import CreateEntry from './Components/CreateEntry'
 import Browse from './Components/Browse'
 import Profile from './Components/Profile'
-import MapApp from "./Components/MapApp";
+import MapApp from "./Components/MapApp"
+import skyline from './Components/skyline.png'
 
 
 class App extends Component {
     render() {
         return (
             <div>
+                <img style={{width: '100%',}} src={skyline}/>
                 <Router>
                     <div className="App">
                         <Navigation/>
