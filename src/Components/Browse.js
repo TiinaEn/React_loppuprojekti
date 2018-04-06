@@ -1,30 +1,47 @@
 import React, { Component } from 'react';
+import {fetchall} from "../ServiceClient";
 
 import '../App.css';
+import OneDestination from "./OneDestination";
 
 class Browse extends Component {
-//     state = {destinations: []};
-//
-//     componentDidMount() {
-//         fetch('/travelapp/destinations')
-//             .then(function (response) {
-//                 return response.json();
-//             })
-//             .then(function (json) {
-//                 this.setState({destinations: json});
-//             }.bind(this));
-//
-//     }
-//
+    state = {destinations: []}
+    componentDidMount() {
+        fetch('/travelapp/destinations')
+            .then(function (response)
+            { return response.json();
+
+            })
+            .then(function (json) {
+                this.setState({destinations: json});
+
+            }.bind(this));
+    }
+
+
+
+    /*haedata = () => {
+        fetchall((function (destinations) {
+            // Pientä virhekäsittelyn tuntua ilmassa
+            // virheen saa aikaiseksi esimerkiksi ajamalla sovellusta siten,
+            // että palvelin ei ole päällä
+            /!*if (virhe) {
+                this.setState({virhestatus: virhe});
+            } else {*!/
+                this.setState({data: destinations});
+
+        }).bind(this));
+    }*/
     render() {
-//         var destination = this.state.destinations.map(function (destination) {
-//             return <p key={destination.id}>{destination.country} {destination.city}</p>
-//         });
+
+        var kaikki = this.state.destinations.map(function (destination) {
+            return (<OneDestination destinations = {destination} key={destination.id}/>)
+        console.dir(this.state.destinations);
+        });
         return (
             <div className="Browse">
-
                 <h1>Destinations</h1>
-               {/*{destination}*/}
+                {kaikki}
             </div>
         );
     }
