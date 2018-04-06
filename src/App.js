@@ -6,7 +6,7 @@ import CreateEntry from './Components/CreateEntry'
 import Browse from './Components/Browse'
 import Profile from './Components/Profile'
 import MapApp from "./Components/MapApp"
-import skyline from './Components/skyline.png'
+import skyline from './Components/Skyline0.png'
 
 
 class App extends Component {

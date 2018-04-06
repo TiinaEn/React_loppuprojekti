@@ -12,7 +12,7 @@ class Profile extends Component {
 
                 <h1>My Profile</h1>
                 <br/>
-                <img style={{width: '20%',}} src={userimg}/>
+                <img style={{width: '15%',}} src={userimg}/>
                 {/*<div>Username</div>*/}
                 {/*<form action="">Email</form>*/}
                 {/*<form action="">Password</form>*/}
