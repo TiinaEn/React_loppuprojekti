@@ -3,8 +3,6 @@ import {GoogleApiWrapper} from 'google-maps-react';
 import ReactDOM from 'react-dom';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
-import input from "eslint-plugin-jsx-a11y/src/util/implicitRoles/input";
-
 
 class MapComponent2 extends Component {
 
@@ -74,7 +72,7 @@ class MapComponent2 extends Component {
 
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {address: ''}
         this.onChange = (address) => this.setState({ address })
     }
 
@@ -131,10 +129,10 @@ class MapComponent2 extends Component {
             .then(latLng => new google.maps.Marker({
                 map: map.panTo(latLng),
                 position: latLng,
-                map: map
+                map: map,
             }))
-            .then(infoWindow.open(map,marker))
-            .catch(error => console.error('Error', error))
+            .catch(error => console.error('Error', error)
+            )
     }
 
 
