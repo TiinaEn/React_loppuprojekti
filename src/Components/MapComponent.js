@@ -66,7 +66,7 @@ class MapComponent extends Component {
     render() {
         const style = {
             width: '100vw',
-            height: '75vh'
+            height: '77vh'
         }
 
         return (
