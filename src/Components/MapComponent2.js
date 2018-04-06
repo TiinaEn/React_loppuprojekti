@@ -8,11 +8,6 @@ import input from "eslint-plugin-jsx-a11y/src/util/implicitRoles/input";
 
 class MapComponent2 extends Component {
 
-   /* state = {
-        locations: [
-            {name: "New York County Supreme Court", location: {lat: 40.7143033, lng: -74.0036919} }
-        ]
-    }*/
     componentDidMount() {
         this.loadMap();
     }
@@ -33,12 +28,6 @@ class MapComponent2 extends Component {
             var map = new maps.Map(node, mapConfig);        //presenting a map on our site
             var marker;
 
-/*            this.state.locations.forEach((location =>
-            marker = new google.maps.Marker({
-                position: {getLatLng},
-                map: map,
-                title: ''
-            })*/
 
             map.addListener('click', function(event) {      //function for adding a marker on a map
                 placeMarker(event.latLng, map);
@@ -86,20 +75,10 @@ class MapComponent2 extends Component {
 
     constructor(props) {
         super(props)
-        this.state = { address: '' }
+        this.state = {}
         this.onChange = (address) => this.setState({ address })
     }
 
-   /* var latlong;*/
-   /* handleFormSubmit = (event) => {
-        event.preventDefault()
-
-        geocodeByAddress(this.state.address)
-            .then(results => getLatLng(results[0]))
-
-            .then(latLng => console.log('success', /!*latlong = *!/latLng))
-            .catch(error => console.error('Error', error))
-    }*/
     handleFormSubmit = (event) => {
         event.preventDefault()
         const {google} = this.props;
@@ -107,27 +86,21 @@ class MapComponent2 extends Component {
         const mapRef = this.refs.map;
         const node = ReactDOM.findDOMNode(mapRef);
         const mapConfig = Object.assign({}, {
-            center: {lat: 60, lng: 25},
             zoom: 5,
             mapTypeId: 'roadmap'
         })
-        var map = new maps.Map(node, mapConfig);
+
+        var map = new maps.Map(node, mapConfig);    //adding marker pazed on search
         geocodeByAddress(this.state.address)
             .then(results => getLatLng(results[0]))
             .then(latLng => new google.maps.Marker({
+                map: map.panTo(latLng),
                 position: latLng,
-                map: map}))
-
-    .catch(error => console.error('Error', error))
+                map: map
+            }))
+            .catch(error => console.error('Error', error))
     }
 
-
-/*    var sijainti = new google.maps.Marker({
-        position: {lat: latlong.lat, lng: latlong.lng}, // sets position of marker to specified location
-        map: map, // sets markers to appear on the map we just created on line 35
-        title: "" // the title of the marker is set to the name of the location
-    });
-    sijainti.addListener('click', handleFormSubmit);*/
 
     render() {
 
