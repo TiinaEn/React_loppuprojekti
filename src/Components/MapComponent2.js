@@ -29,7 +29,7 @@ class MapComponent2 extends Component {
             var marker;
 
 
-            map.addListener('click', function(event) {      //function for adding a marker on a map
+            map.addListener('click', function (event) {      //function for adding a marker on a map
                 placeMarker(event.latLng, map);
             })
 
@@ -41,26 +41,25 @@ class MapComponent2 extends Component {
                 map.panTo(latLng);
 
 
-
-                google.maps.event.addListener(marker, 'click', function() {
-                   infoWindow.open(map, marker);    //presenting an infowindow when double clicking the marker
+                google.maps.event.addListener(marker, 'click', function () {
+                    infoWindow.open(map, marker);    //presenting an infowindow when double clicking the marker
                 });
 
             }
 
             var infoWindow = new google.maps.InfoWindow({   //field for searching a place
                 content: '<div>' +
-                    '<table>' +
-                    '<tr><td>Name:</td><td><input type="text" id="name"/></td></tr>'+
-                    '<tr><td>Address:</td> <td><input type="text" id="address"/></td></tr>'+
-                    '<tr><td>Type:</td><td><select id="type">' +
-                    '<option value="Restaurant">Restaurant</option>'+
-                    '<option value="Hotel">Hotel</option>'+
-                    '<option value="Shop">Shop</option>'+
-                    '<option value="Sight">Sight</option>'+
-                '</select></td></tr>'+
-                '<tr><td></td><td><input type="button" value="Save" onclick="saveData()"/></td></tr>'+
-                '</table>'+
+                '<table>' +
+                '<tr><td>Name:</td><td><input type="text" id="name"/></td></tr>' +
+                '<tr><td>Address:</td> <td><input type="text" id="address"/></td></tr>' +
+                '<tr><td>Type:</td><td><select id="type">' +
+                '<option value="Restaurant">Restaurant</option>' +
+                '<option value="Hotel">Hotel</option>' +
+                '<option value="Shop">Shop</option>' +
+                '<option value="Sight">Sight</option>' +
+                '</select></td></tr>' +
+                '<tr><td></td><td><input type="button" value="Save" onclick="saveData()"/></td></tr>' +
+                '</table>' +
                 '</div>'
             });
 
@@ -69,7 +68,7 @@ class MapComponent2 extends Component {
             });
             });*/
         }
-        }
+    }
 
 
 
@@ -91,6 +90,42 @@ class MapComponent2 extends Component {
         })
 
         var map = new maps.Map(node, mapConfig);    //adding marker pazed on search
+        var marker;
+        var infoWindow = new google.maps.InfoWindow({   //field for searching a place
+            content: '<div>' +
+            '<table>' +
+            '<tr><td>Name:</td><td><input type="text" id="name"/></td></tr>' +
+            '<tr><td>Address:</td> <td><input type="text" id="address"/></td></tr>' +
+            '<tr><td>Type:</td><td><select id="type">' +
+            '<option value="Restaurant">Restaurant</option>' +
+            '<option value="Hotel">Hotel</option>' +
+            '<option value="Shop">Shop</option>' +
+            '<option value="Sight">Sight</option>' +
+            '</select></td></tr>' +
+            '<tr><td></td><td><input type="button" value="Save" onclick="saveData()"/></td></tr>' +
+            '</table>' +
+            '</div>'
+        });
+
+
+        map.addListener('click', function (event) {      //function for adding a marker on a map
+            placeMarker(event.latLng, map);
+        })
+
+        function placeMarker(latLng, map) {
+            marker = new google.maps.Marker({
+                position: latLng,
+                map: map
+            });
+            map.panTo(latLng);
+
+
+            google.maps.event.addListener(marker, 'click', function () {
+                infoWindow.open(map, marker);    //presenting an infowindow when double clicking the marker
+            });
+
+        }
+
         geocodeByAddress(this.state.address)
             .then(results => getLatLng(results[0]))
             .then(latLng => new google.maps.Marker({
@@ -98,6 +133,7 @@ class MapComponent2 extends Component {
                 position: latLng,
                 map: map
             }))
+            .then(infoWindow.open(map,marker))
             .catch(error => console.error('Error', error))
     }
 
