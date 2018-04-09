@@ -25,6 +25,8 @@ class MapComponent2 extends Component {
 
             var map = new maps.Map(node, mapConfig);        //presenting a map on our site
             var marker;
+            var infoWindow;
+            var messageWindow;
 
 
             map.addListener('click', function (event) {      //function for adding a marker on a map
@@ -34,7 +36,7 @@ class MapComponent2 extends Component {
             function placeMarker(latLng, map) {
                 marker = new google.maps.Marker({
                     position: latLng,
-                    map: map
+                    map: map,
                 });
                 map.panTo(latLng);
 
@@ -45,7 +47,7 @@ class MapComponent2 extends Component {
 
             }
 
-            var infoWindow = new google.maps.InfoWindow({   //field for searching a place
+            infoWindow = new google.maps.InfoWindow({   //field for searching a place
                 content: '<div>' +
                 '<table>' +
                 '<tr><td>Name:</td><td><input type="text" id="name"/></td></tr>' +
@@ -61,12 +63,15 @@ class MapComponent2 extends Component {
                 '</div>'
             });
 
-            /*var messageWindow = new google.maps.InfoWindow({
+            messageWindow = new google.maps.InfoWindow({
                content: '<div>Location saved</div>'
             });
-            });*/
+
+
+
         }
     }
+
 
 
 
@@ -145,7 +150,6 @@ class MapComponent2 extends Component {
         const inputProps = {
             value: this.state.address,
             onChange: this.onChange,
-            /*type: 'search',*/
             placeholder: 'Search places'
         }
 

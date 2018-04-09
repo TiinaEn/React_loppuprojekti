@@ -55,9 +55,9 @@ class MapComponent extends Component {
                 '</div>'
             });
 
-            /*var messageWindow = new google.maps.InfoWindow({
+            var messageWindow = new google.maps.InfoWindow({
                content: '<div>Location saved</div>'
-            });*/
+            });
 
         }
     }
