@@ -7,6 +7,9 @@ import Browse from './Components/Browse'
 import Profile from './Components/Profile'
 import MapApp from "./Components/MapApp"
 import skyline from './Components/Skyline0.png'
+import CityList from './Components/CityList'
+import CityDestinations from './Components/CityDestinations'
+import NavigationMobile from './Components/NavigationMobile'
 
 
 class App extends Component {
@@ -17,6 +20,7 @@ class App extends Component {
                 <Router>
                     <div className="App">
                         <Navigation/>
+                        <NavigationMobile/>
 
                         <Switch>
                             <Route exact path="/logout" component={Login}/>
@@ -24,6 +28,8 @@ class App extends Component {
                             <Route exact path="/browse" component={Browse}/>
                             <Route exact path="/profile" component={Profile}/>
                             <Route exact path="/home" component={MapApp}/>
+                            <Route path="/citylist/:country" component={CityList}/>
+                            <Route path="/citydestinations/:city" component={CityDestinations}/>
                         </Switch>
 
                     </div>
@@ -55,5 +61,5 @@ class Navigation extends Component {
     }
 }
 
-/*export default App;*/
+
 export default App;

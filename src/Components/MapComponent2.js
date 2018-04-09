@@ -128,6 +128,12 @@ class MapComponent2 extends Component {
             });
 
         }
+        function saveData() {
+            var latLng = marker.getPosition();
+            var name = '';
+            var type = '';
+
+        }
 
         geocodeByAddress(this.state.address)
             .then(results => getLatLng(results[0]))
