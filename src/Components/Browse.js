@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {fetchall} from "../ServiceClient";
 
 import '../App.css';
-import OneDestination from "./OneDestination";
+import CountryList from "./CountryList";
+import CityList from "./CityList";
 
 class Browse extends Component {
     state = {destinations: []}
@@ -35,13 +36,15 @@ class Browse extends Component {
     render() {
 
         var kaikki = this.state.destinations.map(function (destination) {
-            return (<OneDestination destinations = {destination} key={destination.id}/>)
+            return (<CountryList destinations = {destination} key={destination.id} {...this.props}/>)
         console.dir(this.state.destinations);
-        });
+        }.bind(this));
         return (
             <div className="Browse">
                 <h1>Destinations</h1>
+                <h4>Choose a country</h4>
                 {kaikki}
+                
             </div>
         );
     }
