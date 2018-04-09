@@ -7,7 +7,7 @@ class CreateEntry extends Component {
 
     constructor(props) {
         super(props);
-        {this.state = {name: '', category: '', description: '', rating: '', city: '', country: '', weblink: ''}}
+        {this.state = {name: '', category: '', description: '', rating: '', city: '', country: '', weblink: '', user: ''}}
     }
 
 
@@ -22,10 +22,10 @@ class CreateEntry extends Component {
                 <br/>
                 <form onSubmit={this.handleSubmit}>
                     <label>Name: </label>
-                    <textarea type="text" placeholder="Name" value={this.state.name} onChange={this.handleChange}/>
+                    <textarea type="text" placeholder="Name" onChange={this.handleChange}/>
                     <br/>
                     <label>Category: </label>
-                    <select value={this.state.category} onChange={this.handleChange}>
+                    <select onChange={this.handleChange}>
                         <option value=''>Restaurants</option>
                         <option value=''>Hotels</option>
                         <option value=''>Shops</option>
@@ -34,19 +34,19 @@ class CreateEntry extends Component {
                     </select>
                     <br/>
                     <label>Address: </label>
-                    <textarea type="text" placeholder="Address" value={this.state.address} onChange={this.handleChange}/>
+                    <textarea type="text" placeholder="Address" onChange={this.handleChange}/>
                     <br/>
                     <label>Country: </label>
-                    <textarea type="text" placeholder="Country" value={this.state.country} onChange={this.handleChange}/>
+                    <textarea type="text" placeholder="Country" onChange={this.handleChange}/>
                     <br/>
                     <label>City: </label>
-                    <textarea type="text" placeholder="City" value={this.state.city} onChange={this.handleChange}/>
+                    <textarea type="text" placeholder="City" onChange={this.handleChange}/>
                     <br/>
                     <label>Description: </label>
-                    <textarea type="text" placeholder="Description" value={this.state.description} onChange={this.handleChange}/>
+                    <textarea type="text" placeholder="Description"  onChange={this.handleChange}/>
                     <br/>
                     <label>Rating: </label>
-                    <select value={this.state.rating} onChange={this.handleChange}>
+                    <select onChange={this.handleChange}>
                         <option value=''>1</option>
                         <option value=''>2</option>
                         <option value=''>3</option>
@@ -55,7 +55,10 @@ class CreateEntry extends Component {
                     </select>
                     <br/>
                     <label>Weblink: </label>
-                    <textarea type="text" placeholder="Weblink" value={this.state.weblink} onChange={this.handleChange}/>
+                    <textarea type="text" placeholder="Weblink"  onChange={this.handleChange}/>
+                    <br/>
+                    <label>User: </label>
+                    <textarea type="text" placeholder="User" onChange={this.handleChange}/>
                     <br/>
                     <input type="submit" value="Save" onClick={this.handleCreateClick}/>
                 </form>
