@@ -23,9 +23,7 @@ class Browse extends Component {
 
     /*haedata = () => {
         fetchall((function (destinations) {
-            // Pientä virhekäsittelyn tuntua ilmassa
-            // virheen saa aikaiseksi esimerkiksi ajamalla sovellusta siten,
-            // että palvelin ei ole päällä
+
             /!*if (virhe) {
                 this.setState({virhestatus: virhe});
             } else {*!/
@@ -43,8 +41,8 @@ class Browse extends Component {
             <div className="Browse">
                 <h1>Destinations</h1>
                 <h4>Choose a country</h4>
-                {kaikki}
-                
+                <div>{kaikki}</div>
+
             </div>
         );
     }

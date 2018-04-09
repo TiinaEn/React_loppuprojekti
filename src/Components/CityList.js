@@ -18,7 +18,7 @@ class CityList extends Component {
     }
     showDestinations = (e) => {
         e.preventDefault();
-         this.props.history.push("/citydestinations/"+this.props.cities.city);
+         this.props.history.push("/citydestinations/"+this.state.cities.city);
     }
     render () {
 
@@ -26,18 +26,14 @@ class CityList extends Component {
             return (<CityDestinations cities = {destination1} key={destination1.id} {...this.props}/>)
             console.dir(this.state.cities);
         }.bind(this));
-
-
+        console.dir(this.state.cities);
         return (
-            <div>
-            {this.props.cities.city}
-            </div> )
-/*  {/!*          <ListGroupItem onClick={this.showDestinations} header={this.props.cities.city}>
-                <p>{cities}</p>
-                <p>moi</p>
 
-            </ListGroupItem>*!/}
-        )*/
+            <ListGroupItem onClick={this.showDestinations} header={this.state.cities.city}>
+                <div>{cities}</div>
+
+            </ListGroupItem>
+        )
 }
 }
 
