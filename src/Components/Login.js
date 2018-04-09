@@ -4,6 +4,7 @@ import {/*Form,*/ FormGroup, ControlLabel, /*ButtonGroup,*/ Button, FormControl,
 
 
 import '../App.css';
+import {login} from "../serviceclient";
 
 class Login extends Component {
     constructor(props) {
@@ -13,15 +14,25 @@ class Login extends Component {
             username: '',
             password: ''
         };
-    }
+
+      /*  this.state = {
+            currentUser: null,
+            isAuthenticated: false,
+            isLoading: false
+      git add 
 
     handleChange = event => {
         this.setState({
-            [event.target.id]: event.target.value
+     //       [event.target.id]: event.target.value
+            value: event.target.value
         });
     }
     handleSubmit = event => {
-        event.preventDefault();
+ //       event.preventDefault();
+        login(this.state, function (){this.props.history.push("/home")});
+        this.setState({})
+
+
     }
     validateForm() {
         return this.state.username.length >0 && this.state.password.length >0
@@ -51,6 +62,7 @@ class Login extends Component {
                     </FormGroup>
                     <Button
                         type="submit"
+                        onClick={this.handleSubmit()}
                         disabled={!this.validateForm()}
                     >
                     </Button>

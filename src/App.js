@@ -6,9 +6,11 @@ import CreateEntry from './Components/CreateEntry'
 import Browse from './Components/Browse'
 import Profile from './Components/Profile'
 import MapApp from "./Components/MapApp";
+import Register from './Components/Register'
 
 
 class App extends Component {
+
     render() {
         return (
             <div>
@@ -16,8 +18,14 @@ class App extends Component {
                     <div className="App">
                         <Navigation/>
 
+                        <div>
+                            <Login/>
+
+                        </div>
+
                         <Switch>
-                            <Route exact path="/logout" component={Login}/>
+                            <Route exact path="/register" component={Register}/>
+                            <Route exact path="/login" render={(props) => <Login onLogin={this.handleLogin}{...props}/>} component={Login}/>
                             <Route exact path="/createnew" component={CreateEntry}/>
                             <Route exact path="/browse" component={Browse}/>
                             <Route exact path="/profile" component={Profile}/>
@@ -49,6 +57,7 @@ class Navigation extends Component {
                     </ul>
                 </div>
             </div>
+
         )
     }
 }
