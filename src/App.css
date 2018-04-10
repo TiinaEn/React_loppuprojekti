@@ -32,20 +32,19 @@
 
 .nav{
   background-color: darkslategrey;
+  overflow: visible;
 }
 
-.nav2 a {
-  color: beige;
-  font-size: 13px;
-  font-weight: bold;
-  padding: 14px 20px;
-  text-transform: uppercase;
+span.icon-bar {
+  background-color: whitesmoke;
 }
 
-.nav2 li {
-  display: inline;
+body #root div .App .nav .container-fluid {
+  overflow: visible;
 }
 
-.nav2{
-  background-color: darkslategrey;
+body #root div .App .nav .container-fluid .navbar-toggle{
+  float: left
 }
+
+
