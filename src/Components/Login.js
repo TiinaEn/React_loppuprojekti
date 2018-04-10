@@ -13,13 +13,8 @@ class Login extends Component {
         this.state = {
             username: '',
             password: ''
-        };
-
-      /*  this.state = {
-            currentUser: null,
-            isAuthenticated: false,
-            isLoading: false
-      git add 
+        }
+    }
 
     handleChange = event => {
         this.setState({
@@ -29,7 +24,8 @@ class Login extends Component {
     }
     handleSubmit = event => {
  //       event.preventDefault();
-        login(this.state, function (){this.props.history.push("/home")});
+        login(this.state,
+            function (){this.props.history.push("/home")});
         this.setState({})
 
 

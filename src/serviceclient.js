@@ -1,9 +1,9 @@
 const baseurl='/apptravel'
 
-export function login(user) {
+export function signin(loginRequest) {
     fetch(baseurl + "/login", {
         method: 'POST',
-        headers: 'application/json',
+        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + },
         body: JSON.stringify(user)
     })
         .then(function (response) {
@@ -14,6 +14,11 @@ export function login(user) {
         });
 }
     export function signup () {
-        fetch
+        fetch(baseurl + "/signup", {
+            method: 'POST',
+            headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + },
+            body: JSON.stringify(user)
+            }
+        )
 
 }
