@@ -33,3 +33,19 @@
 .nav{
   background-color: darkslategrey;
 }
+
+.nav2 a {
+  color: beige;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 14px 20px;
+  text-transform: uppercase;
+}
+
+.nav2 li {
+  display: inline;
+}
+
+.nav2{
+  background-color: darkslategrey;
+}

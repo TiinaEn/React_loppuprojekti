@@ -9,6 +9,7 @@ import MapApp from "./Components/MapApp"
 import skyline from './Components/Skyline0.png'
 import CityList from './Components/CityList'
 import CityDestinations from './Components/CityDestinations'
+import NavigationMobile from './Components/NavigationMobile'
 
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
                 <Router>
                     <div className="App">
                         <Navigation/>
+                        <NavigationMobile/>
 
                         <Switch>
                             <Route exact path="/logout" component={Login}/>
@@ -60,36 +62,5 @@ class Navigation extends Component {
     }
 }
 
-class NavigationMobile extends Component { //Rikki vielä
-    render() {
-        return (
-
-            <div>
-                <nav class="navbar navbar-default navbar-fixed-top">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-
-                            </button>
-                        </div>
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/home">Home</a></li>
-                            <li><a href="/createnew">New note</a></li>
-                            <li><a href="/browse">Browse</a></li>
-                            <li><a href="/profile">Profile</a></li>
-                            <li><input type="text" placeholder="Search"/></li>
-                            <li><a href="/logout">Log out</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        )
-    }
-}
 
 export default App;
