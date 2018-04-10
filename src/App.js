@@ -7,6 +7,7 @@ import Browse from './Components/Browse'
 import Profile from './Components/Profile'
 import MapApp from "./Components/MapApp"
 import skyline from './Components/Skyline0.png'
+import SearchResult from "./Components/SearchResult"
 import CityList from './Components/CityList'
 import CityDestinations from './Components/CityDestinations'
 import {Link} from 'react-router-dom';
@@ -19,7 +20,6 @@ class App extends Component {
                 <Router>
                     <div className="App">
                         <Navigation/>
-
                         <Switch>
                             <Route exact path="/logout" component={Login}/>
                             <Route exact path="/createnew" component={CreateEntry}/>
@@ -27,28 +27,30 @@ class App extends Component {
                             <Route path="/browse/:country" component={Browse}/>
                             <Route exact path="/profile" component={Profile}/>
                             <Route exact path="/home" component={MapApp}/>
+                            <Route path="/find/:searchword" component={SearchResult}/>
                             {/*  <Route path="/citylist/:country" component={CityList}/>
                             <Route path="/citydestinations/:city" component={CityDestinations}/>*/}
                         </Switch>
-
                     </div>
                 </Router>
-
             </div>
         );
     }
 }
 
 class Navigation extends Component {
+    search = (event) => {
+        event.preventDefault();
+    }
+
     render() {
         return (
             <div className="nav">
                 <img style={{width: '100%',}} src={skyline}/>
                 <div className="pull-right">
-                    <form class="find" action="/travelapp/find">
+                    <form class="find" onSubmit={this.search}>
                         <input type="text" placeholder="Search"/></form>
                 </div>
-
                 <div className="container-fluid">
                     <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
                         <span class="icon-bar"></span>
@@ -57,7 +59,6 @@ class Navigation extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="mainNavBar">
                         <ul className="nav navbar-nav">
-
                             <li><Link to={"/home"}>Home</Link></li>
                             <li><Link to={"/createnew"}>New note</Link></li>
                             <li><Link to={"/browse"}>Browse</Link></li>
