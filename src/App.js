@@ -28,7 +28,7 @@ class App extends Component {
                             <Route path="/browse/:country" component={Browse}/>
                             <Route exact path="/details" component={OneDestination}/>
                             <Route exact path="/profile" component={Profile}/>
-                            <Route exact path="/home" component={MapApp}/>
+                            <Route exact path="/" component={MapApp}/>
                             <Route path="/find/:searchword" component={SearchResult}/>
                             {/*  <Route path="/citylist/:country" component={CityList}/>
                             <Route path="/citydestinations/:city" component={CityDestinations}/>*/}
@@ -61,7 +61,7 @@ class Navigation extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="mainNavBar">
                         <ul className="nav navbar-nav">
-                            <li><Link to={"/home"}>Home</Link></li>
+                            <li><Link to={"/"}>Home</Link></li>
                             <li><Link to={"/createnew"}>New note</Link></li>
                             <li><Link to={"/browse"}>Browse</Link></li>
                             <li><Link to={"/profile"}>Profile</Link></li>
