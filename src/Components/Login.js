@@ -1,10 +1,23 @@
+/*
+
+import React from 'react';
+
+export default class Login extends React.Component {
+    render(){return(
+    <div>Login-komponentti</div>
+)}}
+*/
+
+
 
 import React, { Component } from 'react';
-import {/*Form,*/ FormGroup, ControlLabel, /*ButtonGroup,*/ Button, FormControl, /*HelpBlock*/} from 'react-bootstrap';
+import {Form, FormGroup, ControlLabel, ButtonGroup, Button, FormControl, HelpBlock} from 'react-bootstrap';
+import {notification} from 'antd';
+import {login} from '../serviceclient';
 
 
 import '../App.css';
-import {login} from "../serviceclient";
+import {sigin, signin} from "../serviceclient";
 
 class Login extends Component {
     constructor(props) {
@@ -16,18 +29,35 @@ class Login extends Component {
         }
     }
 
-    handleChange = event => {
+    handleUsernameChange = event => {
         this.setState({
      //       [event.target.id]: event.target.value
-            value: event.target.value
+            username: event.target.value
+        });
+    }
+    handlePasswordChange = event => {
+        this.setState({
+            //       [event.target.id]: event.target.value
+            password: event.target.value
         });
     }
     handleSubmit = event => {
- //       event.preventDefault();
-        login(this.state,
-            function (){this.props.history.push("/home")});
-        this.setState({})
+   //     event.preventDefault();
 
+        const loginRequest = {
+            username: this.state.username,
+            password: this.state.password
+        }
+        signin(loginRequest)
+            .then(response => {
+                notification.success({
+                });
+                this.props.history.push("/home");
+            }).catch(error => {
+            notification.error({
+                description: error.message || 'Sorry! Something went wrong. Please try again!'
+            });
+        });
 
     }
     validateForm() {
@@ -45,14 +75,14 @@ class Login extends Component {
                             autoFocus
                             type="text"
                             value={this.state.username}
-                            onChange={this.handleChange}
+                            onChange={this.handleUsernameChange}
                         />
                     </FormGroup>
                     <FormGroup controlId="password">
                         <ControlLabel>Password</ControlLabel>
                         <FormControl
                             value={this.state.password}
-                            onChange={this.handleChange}
+                            onChange={this.handlePasswordChange}
                             type="password"
                         />
                     </FormGroup>
@@ -71,3 +101,4 @@ class Login extends Component {
 }
 
 export default Login;
+

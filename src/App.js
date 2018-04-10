@@ -18,10 +18,7 @@ class App extends Component {
                     <div className="App">
                         <Navigation/>
 
-                        <div>
-                            <Login/>
 
-                        </div>
 
                         <Switch>
                             <Route exact path="/register" component={Register}/>
@@ -62,5 +59,5 @@ class Navigation extends Component {
     }
 }
 
-/*export default App;*/
+
 export default App;
