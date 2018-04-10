@@ -10,12 +10,14 @@ class CountryList extends Component {
 
     showCities = (e) => {
         e.preventDefault();
-        this.props.history.push("/citylist/"+this.props.destinations.country)
+        this.props.history.push("/browse/"+this.props.countryname)
     }
 
     render() {
+
+
         return(
-            <ListGroupItem onClick={this.showCities} header = {this.props.destinations.country}>
+            <ListGroupItem onClick={this.showCities} header = {this.props.countryname}>
 
             </ListGroupItem>
         );
