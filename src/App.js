@@ -9,18 +9,16 @@ import MapApp from "./Components/MapApp"
 import skyline from './Components/Skyline0.png'
 import CityList from './Components/CityList'
 import CityDestinations from './Components/CityDestinations'
-import NavigationMobile from './Components/NavigationMobile'
+import {Link} from 'react-router-dom';
 
 
 class App extends Component {
     render() {
         return (
             <div>
-                <img style={{width: '100%',}} src={skyline}/>
                 <Router>
                     <div className="App">
                         <Navigation/>
-                        <NavigationMobile/>
 
                         <Switch>
                             <Route exact path="/logout" component={Login}/>
@@ -45,8 +43,25 @@ class Navigation extends Component {
     render() {
         return (
             <div className="nav">
-                <div className="container">
-                    <ul className="pull-left">
+                <img style={{width: '100%',}} src={skyline}/>
+
+                <div className="container-fluid">
+                    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="mainNavBar">
+                        <ul className="nav navbar-nav">
+                            <li><Link to={"/home"}>Home</Link></li>
+                            <li><Link to={"/createnew"}>New note</Link></li>
+                            <li><Link to={"/browse"}>Browse</Link></li>
+                            <li><Link to={"/profile"}>Profile</Link></li>
+                            <li><input type="text" placeholder="Search"/></li>
+                            <li><Link to={"/logout"}>Log out</Link></li>
+                        </ul>
+                    </div>
+                    {/*<ul className="pull-left">
                         <li><a href="/home">Home</a></li>
                         <li><a href="/createnew">New note</a></li>
                         <li><a href="/browse">Browse</a></li>
@@ -55,7 +70,7 @@ class Navigation extends Component {
                     <ul className="pull-right">
                         <li><input type="text" placeholder="Search"/></li>
                         <li><a href="/logout">Log out</a></li>
-                    </ul>
+                    </ul>*/}
                 </div>
             </div>
         )
