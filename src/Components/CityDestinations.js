@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class CityDestinations extends Component {
     render () {
         return (
-            <p>{this.props.cities.name}</p>
+            <div>Nimi: {this.props.destination.name}</div>
         )
     }
 

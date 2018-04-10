@@ -26,10 +26,11 @@ class App extends Component {
                             <Route exact path="/logout" component={Login}/>
                             <Route exact path="/createnew" component={CreateEntry}/>
                             <Route exact path="/browse" component={Browse}/>
+                            <Route path="/browse/:country" component={Browse}/>
                             <Route exact path="/profile" component={Profile}/>
                             <Route exact path="/home" component={MapApp}/>
-                            <Route path="/citylist/:country" component={CityList}/>
-                            <Route path="/citydestinations/:city" component={CityDestinations}/>
+                          {/*  <Route path="/citylist/:country" component={CityList}/>
+                            <Route path="/citydestinations/:city" component={CityDestinations}/>*/}
                         </Switch>
 
                     </div>

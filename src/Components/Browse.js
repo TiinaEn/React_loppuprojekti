@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {fetchall} from "../ServiceClient";
 
 import '../App.css';
@@ -7,10 +7,11 @@ import CityList from "./CityList";
 
 class Browse extends Component {
     state = {destinations: []}
+
     componentDidMount() {
         fetch('/travelapp/destinations')
-            .then(function (response)
-            { return response.json();
+            .then(function (response) {
+                return response.json();
 
             })
             .then(function (json) {
@@ -19,32 +20,43 @@ class Browse extends Component {
             }.bind(this));
     }
 
+    setactivecity=(name)=> {
+        this.setState({activecity: name});
+    }
 
-
-    /*haedata = () => {
-        fetchall((function (destinations) {
-            // Pientä virhekäsittelyn tuntua ilmassa
-            // virheen saa aikaiseksi esimerkiksi ajamalla sovellusta siten,
-            // että palvelin ei ole päällä
-            /!*if (virhe) {
-                this.setState({virhestatus: virhe});
-            } else {*!/
-                this.setState({data: destinations});
-
-        }).bind(this));
-    }*/
     render() {
-
-        var kaikki = this.state.destinations.map(function (destination) {
-            return (<CountryList destinations = {destination} key={destination.id} {...this.props}/>)
-        console.dir(this.state.destinations);
+        const uniquecountries = [...new Set(this.state.destinations.map(dest => dest.country))];
+        const kaikki = uniquecountries.map(function (name, index) {
+            return (<CountryList countryname={name} key={index} {...this.props}/>)
         }.bind(this));
+
+        let kaupungit=[];
+        if (this.props.match.params.country) {
+            for(let i = 0 ; i < this.state.destinations.length ; ++i) {
+                if (this.state.destinations[i].country === this.props.match.params.country) {
+                    kaupungit.push(this.state.destinations[i]);
+                }
+            }
+        }
+        const uniquecities = [...new Set(kaupungit.map(dest => dest.city))];
+        const kaikkicityt = uniquecities.map(function(name, index) {
+            // console.log("Active? " + name, name===this.state.activecity);
+            return (<CityList cityname={name} active={name===this.state.activecity}
+                              setactive={this.setactivecity} alldestinations={this.state.destinations}
+                              key={index}/>)
+        }.bind(this));
+
         return (
             <div className="Browse">
-                <h1>Destinations</h1>
-                <h4>Choose a country</h4>
-                {kaikki}
-                
+                <div className="countrylistdiv">
+                    <h1>Destinations</h1>
+                    <h4>Choose a country</h4>
+                    <div>{kaikki}</div>
+                </div>
+                <hr/>
+                <div className="citylistdiv">
+                    {kaikkicityt}
+                </div>
             </div>
         );
     }
