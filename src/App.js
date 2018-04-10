@@ -44,7 +44,10 @@ class Navigation extends Component {
         return (
             <div className="nav">
                 <img style={{width: '100%',}} src={skyline}/>
-                <div className="pull-right"><input type="text" placeholder="Search"/></div>
+                <div className="pull-right">
+                    <form class="find" action="/travelapp/find">
+                        <input type="text" placeholder="Search"/></form>
+                </div>
 
                 <div className="container-fluid">
                     <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
@@ -60,9 +63,7 @@ class Navigation extends Component {
                             <li><Link to={"/browse"}>Browse</Link></li>
                             <li><Link to={"/profile"}>Profile</Link></li>
                             <li><Link to={"/logout"}>Log out</Link></li>
-                            <li></li>
                         </ul>
-
                     </div>
                 </div>
             </div>
