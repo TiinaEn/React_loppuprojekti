@@ -27,7 +27,7 @@ class App extends Component {
                             <Route path="/browse/:country" component={Browse}/>
                             <Route exact path="/profile" component={Profile}/>
                             <Route exact path="/home" component={MapApp}/>
-                          {/*  <Route path="/citylist/:country" component={CityList}/>
+                            {/*  <Route path="/citylist/:country" component={CityList}/>
                             <Route path="/citydestinations/:city" component={CityDestinations}/>*/}
                         </Switch>
 
@@ -44,6 +44,7 @@ class Navigation extends Component {
         return (
             <div className="nav">
                 <img style={{width: '100%',}} src={skyline}/>
+                <div className="pull-right"><input type="text" placeholder="Search"/></div>
 
                 <div className="container-fluid">
                     <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
@@ -53,24 +54,16 @@ class Navigation extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="mainNavBar">
                         <ul className="nav navbar-nav">
+
                             <li><Link to={"/home"}>Home</Link></li>
                             <li><Link to={"/createnew"}>New note</Link></li>
                             <li><Link to={"/browse"}>Browse</Link></li>
                             <li><Link to={"/profile"}>Profile</Link></li>
-                            <li><input type="text" placeholder="Search"/></li>
                             <li><Link to={"/logout"}>Log out</Link></li>
+                            <li></li>
                         </ul>
+
                     </div>
-                    {/*<ul className="pull-left">
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="/createnew">New note</a></li>
-                        <li><a href="/browse">Browse</a></li>
-                        <li><a href="/profile">Profile</a></li>
-                    </ul>
-                    <ul className="pull-right">
-                        <li><input type="text" placeholder="Search"/></li>
-                        <li><a href="/logout">Log out</a></li>
-                    </ul>*/}
                 </div>
             </div>
         )

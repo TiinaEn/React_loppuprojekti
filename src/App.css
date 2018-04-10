@@ -1,50 +1,54 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 .nav a {
-  color: beige;
-  font-size: 13px;
-  font-weight: bold;
-  padding: 14px 20px;
-  text-transform: uppercase;
+    color: beige;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 14px 20px;
+    text-transform: uppercase;
 }
 
 .nav li {
-  display: inline;
+    display: inline;
 }
 
-.nav{
-  background-color: darkslategrey;
-  overflow: visible;
+.nav {
+    background-color: darkslategrey;
+    overflow: visible;
 }
 
 span.icon-bar {
-  background-color: whitesmoke;
+    background-color: whitesmoke;
 }
 
 body #root div .App .nav .container-fluid {
-  overflow: visible;
+    overflow: visible;
 }
 
-body #root div .App .nav .container-fluid .navbar-toggle{
-  float: left
+body #root div .App .nav .container-fluid .navbar-toggle {
+    float: left
+}
+
+.pull-right {
+    display: inline;
+    padding: 20px 20px;
 }
 
 
