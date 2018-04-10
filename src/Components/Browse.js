@@ -46,17 +46,23 @@ class Browse extends Component {
                               key={index}/>)
         }.bind(this));
 
+
         return (
             <div className="Browse">
-                <div className="countrylistdiv">
+                <div  className="countrylistdiv">
                     <h1>Destinations</h1>
                     <h4>Choose a country</h4>
-                    <div>{kaikki}</div>
+
+                    <div class="col-xs-4">{kaikki}</div>
+
+                </div>
+                <div className="citylistdiv">
+                    <div class="col-xs-8" >
+                    {kaikkicityt}
+                    </div>
                 </div>
                 <hr/>
-                <div className="citylistdiv">
-                    {kaikkicityt}
-                </div>
+
             </div>
         );
     }
