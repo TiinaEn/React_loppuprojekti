@@ -6,9 +6,9 @@ import CreateEntry from './Components/CreateEntry'
 import Browse from './Components/Browse'
 import Profile from './Components/Profile'
 import MapApp from "./Components/MapApp"
+import OneDestination from './Components/OneDestination'
 import skyline from './Components/Skyline0.png'
-import CityList from './Components/CityList'
-import CityDestinations from './Components/CityDestinations'
+
 import {Link} from 'react-router-dom';
 
 
@@ -25,6 +25,7 @@ class App extends Component {
                             <Route exact path="/createnew" component={CreateEntry}/>
                             <Route exact path="/browse" component={Browse}/>
                             <Route path="/browse/:country" component={Browse}/>
+                            <Route exact path="/details" component={OneDestination}/>
                             <Route exact path="/profile" component={Profile}/>
                             <Route exact path="/home" component={MapApp}/>
                             {/*  <Route path="/citylist/:country" component={CityList}/>
