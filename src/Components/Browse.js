@@ -4,6 +4,7 @@ import {fetchall} from "../ServiceClient";
 import '../App.css';
 import CountryList from "./CountryList";
 import CityList from "./CityList";
+import CityDestinations from './CityDestinations';
 
 class Browse extends Component {
     state = {destinations: []}
@@ -43,7 +44,7 @@ class Browse extends Component {
             // console.log("Active? " + name, name===this.state.activecity);
             return (<CityList cityname={name} active={name===this.state.activecity}
                               setactive={this.setactivecity} alldestinations={this.state.destinations}
-                              key={index}/>)
+                              key={index} {...this.props}/>)
         }.bind(this));
 
 

@@ -32,7 +32,7 @@ class App extends Component {
                             <Route exact path="/createnew" component={CreateEntry}/>
                             <Route exact path="/browse" component={Browse}/>
                             <Route path="/browse/:country" component={Browse}/>
-                            <Route exact path="/details" component={OneDestination}/>
+                            <Route path="/details" component={OneDestination}/>
                             <Route exact path="/profile" component={Profile}/>
                             <Route exact path="/" component={MapApp}/>
                             <Route path="/find/:searchword" component={SearchResult}/>
