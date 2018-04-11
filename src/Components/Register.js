@@ -57,7 +57,7 @@ class Register extends Component {
                     message: 'Hei vaan',
                     description: "Thank you! You're successfully registered. Please Login to continue!",
                 });
-                this.props.history.push("/login");
+                this.props.history.push("travelapp/login");
             }).catch(error => {
             notification.error({
                 message: 'Hei vaan',
@@ -70,7 +70,6 @@ class Register extends Component {
     render() {
         return (
             <div>
-                <div>
 
                     <form onSubmit={this.handleSignUp}>
                         <div className="form-group" value={this.state.name} onChange={this.handleNameChange}>
@@ -91,16 +90,11 @@ class Register extends Component {
                         </div>
                         <Button
                             type="submit"
-                            onClick={this.handleSignUp}
+                         //   onClick={this.handleSignUp}
                             /* disabled={!this.validateForm()}*/
-                        >
+                        >Submit
                         </Button>
-                        {/*<div class="form-group">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
-            </div>*/}
                     </form>
-                </div>
             </div>
         )
     }

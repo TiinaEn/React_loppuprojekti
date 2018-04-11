@@ -1,17 +1,20 @@
 const baseurl='/travelapp'
-const ACCESS_TOKEN = 'accessToken';
+export const ACCESS_TOKEN = 'accessToken';
 
 
 export function signin(loginRequest) {
+    console.log("Accesstoken", ACCESS_TOKEN);
     return fetch(/*baseurl + */"/travelapp/login", {
         method: 'POST',
         headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
+    //    mode: "no-cors",
         body: JSON.stringify(loginRequest)
     })
 
         .then(response =>{
                 if(!response.ok) {
-                    return Promise.reject(response.json());
+                    console.log("Rejected", response);
+                    return Promise.reject(response);
                 }
                 return response.json();
             }
@@ -24,7 +27,8 @@ export function signin(loginRequest) {
 });*/
 }
     export function signup (SignupRequest) {
-        fetch(/*baseurl + */"/travelapp/signup", {
+    console.log("Accesstoken", ACCESS_TOKEN);
+        return fetch(/*baseurl + */"/travelapp/signup", {
             method: 'POST',
             headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
             body: JSON.stringify(SignupRequest)

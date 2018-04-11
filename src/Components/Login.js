@@ -14,6 +14,7 @@ import React, { Component } from 'react';
 import {Form, FormGroup, ControlLabel, ButtonGroup, Button, FormControl, HelpBlock} from 'react-bootstrap';
 import {notification} from 'antd';
 import {login} from '../serviceclient';
+import {ACCESS_TOKEN} from '../serviceclient'
 
 
 import '../App.css';
@@ -24,7 +25,7 @@ class Login extends Component {
         super(props);
 
         this.state = {
-            username: '',
+            usernameOrEmail: '',
             password: ''
         }
     }
@@ -32,7 +33,7 @@ class Login extends Component {
     handleUsernameChange = event => {
         this.setState({
      //       [event.target.id]: event.target.value
-            username: event.target.value
+            usernameOrEmail: event.target.value
         });
     }
     handlePasswordChange = event => {
@@ -42,17 +43,19 @@ class Login extends Component {
         });
     }
     handleSubmit = event => {
-   //     event.preventDefault();
+        event.preventDefault();
 
         const loginRequest = {
-            username: this.state.username,
+            usernameOrEmail: this.state.usernameOrEmail,
             password: this.state.password
         }
         signin(loginRequest)
             .then(response => {
+                localStorage.setItem(ACCESS_TOKEN, response.accessToken)
                 notification.success({
+                    description: "You're successfully logged in!"
                 });
-                this.props.history.push("/home");
+                this.props.history.push("travelapp/home");
             }).catch(error => {
             notification.error({
                 description: error.message || 'Sorry! Something went wrong. Please try again!'
@@ -61,7 +64,7 @@ class Login extends Component {
 
     }
     validateForm() {
-        return this.state.username.length >0 && this.state.password.length >0
+        return this.state.usernameOrEmail.length >0 && this.state.password.length >0
     }
 
 
@@ -69,12 +72,12 @@ class Login extends Component {
         return (
             <div className="Login">
                 <form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="username">
+                    <FormGroup controlId="usernameOrEmail">
                         <ControlLabel>Username</ControlLabel>
                         <FormControl
                             autoFocus
                             type="text"
-                            value={this.state.username}
+                            value={this.state.usernameOrEmail}
                             onChange={this.handleUsernameChange}
                         />
                     </FormGroup>
@@ -88,9 +91,9 @@ class Login extends Component {
                     </FormGroup>
                     <Button
                         type="submit"
-                        onClick={this.handleSubmit()}
+                //        onClick={this.handleSubmit()}
                         disabled={!this.validateForm()}
-                    >
+                    >Submit
                     </Button>
                 </form>
 

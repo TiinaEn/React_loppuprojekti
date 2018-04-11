@@ -22,11 +22,11 @@ class App extends Component {
 
                         <Switch>
                             <Route exact path="/register" component={Register}/>
-                            <Route exact path="/login" component={Login}/>
+                            <Route exact path="/travelapp/login" component={Login}/>
                             <Route exact path="/createnew" component={CreateEntry}/>
                             <Route exact path="/browse" component={Browse}/>
                             <Route exact path="/profile" component={Profile}/>
-                            <Route exact path="/home" component={MapApp}/>
+                            <Route exact path="/travelapp/home" component={MapApp}/>
                         </Switch>
 
                     </div>
@@ -43,7 +43,7 @@ class Navigation extends Component {
             <div className="nav">
                 <div className="container">
                     <ul className="pull-left">
-                        <li><a href="/home">Home</a></li>
+                        <li><a href="/travelapp/home">Home</a></li>
                         <li><a href="/createnew">New note</a></li>
                         <li><a href="/browse">Browse</a></li>
                         <li><a href="/profile">Profile</a></li>
