@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {fetchall} from "../ServiceClient";
+import {fetchall} from "../Service";
 
 import '../App.css';
 import CountryList from "./CountryList";

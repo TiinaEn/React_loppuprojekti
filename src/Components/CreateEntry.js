@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import '../App.css';
 import '../Note.css';
 import MapComponent2 from "./MapComponent2";
-import {createEntry} from "../ServiceClient";
+import {createEntry} from "../Service";
 
 class CreateEntry extends Component {
 

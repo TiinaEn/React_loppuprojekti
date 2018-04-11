@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {signup} from '../serviceclient';
+import {signup} from '../Service';
 import {notification} from 'antd';
 import {Button} from 'react-bootstrap';
 

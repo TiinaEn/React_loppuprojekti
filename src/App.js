@@ -90,18 +90,6 @@ class Navigation extends Component {
                         </ul>
                     </div>
 
-                /*<div className="container">
-                    <ul className="pull-left">
-                        <li><a href="/travelapp/home">Home</a></li>
-                        <li><a href="/createnew">New note</a></li>
-                        <li><a href="/browse">Browse</a></li>
-                        <li><a href="/profile">Profile</a></li>
-                    </ul>
-                    <ul className="pull-right">
-                        <li><input type="text" placeholder="Search"/></li>
-                        <li><a href="/logout">Log out</a></li>
-                    </ul>*/
-
                 </div>
             </div>
 
