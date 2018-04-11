@@ -59,8 +59,8 @@ class OneDestination extends Component {
                     <ListGroupItem><b>Things to remember: </b>{details.description}</ListGroupItem>
                     <ListGroupItem>{details.weblink}</ListGroupItem>
                 </div>
-                <input type="submit" value="Remove" onClick={this.handleDeleteClick}/>
-                <input type="submit" value="Cancel" onClick={this.handleCancelClick}/>
+                <input className="btn btn-default btn-md" type="submit" value="Remove" onClick={this.handleDeleteClick}/>
+                <input className="btn btn-default btn-md" type="submit" value="Back to Browse" onClick={this.handleCancelClick}/>
             </ListGroup>
         );
     }
