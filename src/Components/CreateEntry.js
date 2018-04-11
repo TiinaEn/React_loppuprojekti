@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+//import '../App.css';
 import '../Note.css';
 import MapComponent2 from "./MapComponent2";
 import {createEntry} from "../ServiceClient";
@@ -34,6 +34,7 @@ class CreateEntry extends Component {
     render() {
         return (
             <div className="xx">
+                <div className="content">
                 <h1>New Note</h1>
                 <br/>
                 <form>
@@ -75,11 +76,14 @@ class CreateEntry extends Component {
                     <br/>
 {/*
                     <label>User: </label>
+                    <br/>
+                    <textarea className="formfield" type="text" placeholder="User" onChange={this.handleChange}/>
                     <textarea type="text" placeholder="User" value={this.state.user} onChange={this.handleUserChange}/>
                     <br/>
 */}
                     <input type="submit" value="Save" onClick={this.handleCreateClick}/>
                 </form>
+                </div>
                 <br/>
                 <MapComponent2/>
             </div>
