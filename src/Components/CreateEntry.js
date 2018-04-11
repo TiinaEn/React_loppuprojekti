@@ -37,43 +37,67 @@ class CreateEntry extends Component {
                 <div className="content">
                 <h1>New Note</h1>
                 <br/>
-                <form>
-                    <label>Name: </label>
-                    <textarea type="text" placeholder="Name" value={this.state.name} onChange={this.handleNameChange}/>
-                    <br/>
-                    <label>Category: </label>
-                    <select value={this.state.category} onChange={this.handleCategoryChange}>
-                        <option>Restaurants</option>
-                        <option>Hotels</option>
-                        <option>Shops</option>
-                        <option>Sights</option>
-                        <option>Other</option>
-                    </select>
-                    <br/>
-                    <label>Address: </label>
-                    <textarea type="text" placeholder="Address" value={this.state.address} onChange={this.handleAddressChange}/>
-                    <br/>
-                    <label>Country: </label>
-                    <textarea type="text" placeholder="Country" value={this.state.country} onChange={this.handleCountryChange}/>
-                    <br/>
-                    <label>City: </label>
-                    <textarea type="text" placeholder="City" value={this.state.city} onChange={this.handleCityChange}/>
-                    <br/>
-                    <label>Description: </label>
-                    <textarea type="text" placeholder="Description" value={this.state.description} onChange={this.handleDescriptionChange}/>
-                    <br/>
-                    <label>Rating: </label>
-                    <select value={this.state.rating} onChange={this.handleRatingChange}>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                    <br/>
-                    <label>Weblink: </label>
-                    <textarea type="text" placeholder="Weblink" value={this.state.weblink} onChange={this.handleWeblinkChange}/>
-                    <br/>
+                <form className= "form-horizontal">
+                    <div className= "form-group">
+                        <label className="control-label col-xs-2">Name: </label>
+                        <div className="col-xs-10">
+                            <input className="form-control " type="text" placeholder="Name" value={this.state.name} onChange={this.handleNameChange}/>
+                        </div>
+                        </div>
+                    <div className="form-group">
+                        <label className="control-label col-xs-2">Category: </label>
+                        <div className="col-xs-10">
+                            <select className="form-control" value={this.state.category} onChange={this.handleCategoryChange}>
+                                <option>Restaurants</option>
+                                <option>Hotels</option>
+                                <option>Shops</option>
+                                <option>Sights</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="control-label col-xs-2">Address: </label>
+                        <div className="col-xs-10">
+                            <textarea className="form-control" type="text" placeholder="Address" value={this.state.address} onChange={this.handleAddressChange}/>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="control-label col-xs-2">Country: </label>
+                        <div className="col-xs-10">
+                            <input className="form-control" type="text" placeholder="Country" value={this.state.country} onChange={this.handleCountryChange}/>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="control-label col-xs-2">City: </label>
+                        <div className="col-xs-10">
+                            <input className="form-control" type="text" placeholder="City" value={this.state.city} onChange={this.handleCityChange}/>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="control-label col-xs-2">Things to remember: </label>
+                        <div className="col-xs-10">
+                            <textarea className="form-control" type="text" placeholder="Description" value={this.state.description} onChange={this.handleDescriptionChange}/>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="control-label col-xs-2">Rating: </label>
+                        <div className="col-xs-10">
+                            <select className="form-control" value={this.state.rating} onChange={this.handleRatingChange}>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label className="control-label col-xs-2">Weblink: </label>
+                        <div className="col-xs-10">
+                            <input className="form-control" type="text" placeholder="Weblink" value={this.state.weblink} onChange={this.handleWeblinkChange}/>
+                        </div>
+                    </div>
 {/*
                     <label>User: </label>
                     <br/>
