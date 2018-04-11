@@ -17,21 +17,21 @@ class Profile extends Component {
                 <br/>
                 <form className= "form-horizontal">
                     <div className= "form-group">
-                    <label className="control-label col-xs-4">Username: </label>
-                    <div className="col-xs-8">
-                        <input type="text" value="Heidi"/>
+                    <label className="control-label col-xs-2">Username: </label>
+                    <div className="col-xs-10">
+                        <input className="form-control" type="text" value="Heidi"/>
                     </div>
                 </div>
                     <div className= "form-group">
-                        <label className="control-label col-xs-4">Email: </label>
-                        <div className="col-xs-8">
-                            <input type="text" value="heidi@heidi.fi"/>
+                        <label className="control-label col-xs-2">Email: </label>
+                        <div className="col-xs-10">
+                            <input className="form-control" type="text" value="heidi@heidi.fi"/>
                         </div>
                     </div>
                     <div className= "form-group">
-                        <label className="control-label col-xs-4">Password: </label>
-                        <div className="col-xs-8">
-                            <input type="text" value="*********"/>
+                        <label className="control-label col-xs-2">Password: </label>
+                        <div className="col-xs-10">
+                            <input className="form-control" type="text" value="*********"/>
                         </div>
                     </div>
                    </form>
