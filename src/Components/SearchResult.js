@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {ListGroupItem} from 'react-bootstrap';
 
 
 class SearchResult extends Component {
@@ -47,11 +48,11 @@ class SearchResult extends Component {
         console.log("SearchResult, render", this.state);
         const results = this.state.foundDestinations.map(function(destination) {
             return (
+
+               // <ListGroupItem><b>Location: </b>{details.country}, {details.city}</ListGroupItem>
                 <div key={destination.id}>
-                    <p>{destination.country}</p>
-                    <p>{destination.city}</p>
-                    <p>{destination.name}</p>
-                    <p>{destination.category}</p>
+                    <h3> <b>{destination.name}</b> ({destination.category})</h3>
+                    <ListGroupItem> <b> Location: </b> {destination.country}, {destination.city} </ListGroupItem>
                 </div>)
         })
             return (
