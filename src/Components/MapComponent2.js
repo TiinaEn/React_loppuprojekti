@@ -6,6 +6,9 @@ import {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 
 class MapComponent2 extends Component {
 
+
+
+
     componentDidMount() {
         this.loadMap();
     }
@@ -24,29 +27,40 @@ class MapComponent2 extends Component {
 
 
 
-
             var map = new maps.Map(node, mapConfig);        //presenting a map on our site
             var marker;
             var infoWindow;
             var messageWindow;
+            var markers = [];
 
+        {/*    <div className="buttons">
+                <input onclick="deleteMarkers();" type=button value"Remove Markers"/>
+            </div>*/}
 
             map.addListener('click', function (event) {      //function for adding a marker on a map
                 placeMarker(event.latLng, map);
             })
 
             function placeMarker(latLng, map) {
-
                 marker = new google.maps.Marker({
                     position: latLng,
                     map: map,
-
                 });
 
                 var saveMarker = ("Position" + marker.getPosition());
                 console.log(saveMarker);
 
+                markers.push(marker);
                 map.panTo(latLng);
+
+                addAllMarkers(map);
+                function addAllMarkers (map) {
+                    for (var i = 0; i < markers.length; i++) {
+                        markers[i].setMap(map);
+                        console.log(i);
+                    }
+                }
+                    
 
 
 
@@ -130,6 +144,8 @@ class MapComponent2 extends Component {
                 position: latLng,
                 map: map
             });
+            var saveMarker2 = ("Position" + marker.getPosition());
+            console.log(saveMarker2);
 
             map.panTo(latLng);
 
@@ -154,6 +170,7 @@ class MapComponent2 extends Component {
 
             .catch(error => console.error('Error', error)
             )
+
     }
 
 

@@ -22,7 +22,7 @@ class MapComponent extends Component {
 
             var map = new maps.Map(node, mapConfig);
 
-    /*        map.addListener('click', function(event) {
+            /*map.addListener('click', function(event) {
                 placeMarker(event.latLng, map);
             })
 
@@ -58,6 +58,8 @@ class MapComponent extends Component {
             var messageWindow = new google.maps.InfoWindow({
                content: '<div>Location saved</div>'
             });
+
+
 
         }
     }
