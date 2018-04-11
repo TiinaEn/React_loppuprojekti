@@ -8,7 +8,8 @@ class CreateEntry extends Component {
 
     constructor(props) {
         super(props);
-        {this.state = {name: '', category: '', address:'', description: '', rating: '', city: '', country: '', weblink: ''}}
+        {this.state = {name: '', category: '', address:'', description: '',
+            rating: '', city: '', country: '', weblink: '', latitude: 0, longitude: 0}}
     }
 
     goBackToBrowse = () => {
@@ -23,6 +24,7 @@ class CreateEntry extends Component {
     handleCityChange = (e) => {this.setState({city: e.target.value})}
     handleCountryChange = (e) => {this.setState({country: e.target.value})}
     handleWeblinkChange = (e) => {this.setState({weblink: e.target.value})}
+    handleCoordChange = (pos) => {this.setState({latitude: pos.lat(), longitude: pos.lng()})}
     // handleUserChange = (e) => {this.setState({user: e.target.value})}
     handleCreateClick = (e) => {
         e.preventDefault();
@@ -32,6 +34,7 @@ class CreateEntry extends Component {
     }
 
     render() {
+        console.log("Creatgeentry", this.state);
         return (
             <div className="xx">
                 <div className="content">
@@ -109,7 +112,7 @@ class CreateEntry extends Component {
                 </form>
                 </div>
                 <br/>
-                <MapComponent2/>
+                <MapComponent2 setdestcoords={this.handleCoordChange}/>
             </div>
         );
     }

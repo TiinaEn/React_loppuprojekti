@@ -7,8 +7,6 @@ import {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 class MapComponent2 extends Component {
 
 
-
-
     componentDidMount() {
         this.loadMap();
     }
@@ -26,16 +24,18 @@ class MapComponent2 extends Component {
             })
 
 
-
             var map = new maps.Map(node, mapConfig);        //presenting a map on our site
             var marker;
             var infoWindow;
             var messageWindow;
             var markers = [];
+            var self = this;
 
-        {/*    <div className="buttons">
+
+            {/*    <div className="buttons">
                 <input onclick="deleteMarkers();" type=button value"Remove Markers"/>
-            </div>*/}
+            </div>*/
+            }
 
             map.addListener('click', function (event) {      //function for adding a marker on a map
                 placeMarker(event.latLng, map);
@@ -47,21 +47,21 @@ class MapComponent2 extends Component {
                     map: map,
                 });
 
-                var saveMarker = ("Position" + marker.getPosition());
-                console.log(saveMarker);
+                var pos = marker.getPosition();
+                console.dir(pos);
+                self.props.setdestcoords(pos);
 
                 markers.push(marker);
                 map.panTo(latLng);
 
                 addAllMarkers(map);
-                function addAllMarkers (map) {
+
+                function addAllMarkers(map) {
                     for (var i = 0; i < markers.length; i++) {
                         markers[i].setMap(map);
                         console.log(i);
                     }
                 }
-                    
-
 
 
                 google.maps.event.addListener(marker, 'click', function () {
@@ -87,9 +87,8 @@ class MapComponent2 extends Component {
             });
 
             messageWindow = new google.maps.InfoWindow({
-               content: '<div>Location saved</div>'
+                content: '<div>Location saved</div>'
             });
-
 
 
         }
@@ -98,7 +97,7 @@ class MapComponent2 extends Component {
     constructor(props) {
         super(props)
         this.state = {address: ''}
-        this.onChange = (address) => this.setState({ address })
+        this.onChange = (address) => this.setState({address})
     }
 
     handleFormSubmit = (event) => {
@@ -166,7 +165,8 @@ class MapComponent2 extends Component {
                 icon: {
                     path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
                     scale: 5
-            }}))
+                }
+            }))
 
             .catch(error => console.error('Error', error)
             )
@@ -186,19 +186,21 @@ class MapComponent2 extends Component {
             placeholder: 'Search places'
         }
 
+
         return (
             <div>
-            <div ref="map" style={style}>
-                loading map...
-            </div>
+                <div ref="map" style={style}>
+                    loading map...
+                </div>
                 <form onSubmit={this.handleFormSubmit}>
-                    <PlacesAutocomplete inputProps={inputProps} />
+                    <PlacesAutocomplete inputProps={inputProps}/>
                     <button type="submit">Submit</button>
                 </form>
             </div>
         )
     }
 }
+
 export default GoogleApiWrapper({
     apiKey: 'AIzaSyAZEa7IBzFg2qOA5xgGRzlDab9zyDnptKs',
 })(MapComponent2)
