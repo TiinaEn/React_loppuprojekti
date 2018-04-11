@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import '../App.css';
-import '../Profile.css';
+import '../Note.css';
 import userimg from '../userimg.png'
 
 
@@ -15,9 +15,26 @@ class Profile extends Component {
                 <img style={{width: '15%',}} src={userimg}/>
                 <br/>
                 <br/>
-                <form>Username:  <input type="text" value="Heidi"/></form>
-                <form>Email:  <input type="text" value="heidi@heidi.fi"/></form>
-                <form>Password:  <input type="text" value="*********"/></form>
+                <form className= "form-horizontal">
+                    <div className= "form-group">
+                    <label className="control-label col-xs-4">Username: </label>
+                    <div className="col-xs-8">
+                        <input type="text" value="Heidi"/>
+                    </div>
+                </div>
+                    <div className= "form-group">
+                        <label className="control-label col-xs-4">Email: </label>
+                        <div className="col-xs-8">
+                            <input type="text" value="heidi@heidi.fi"/>
+                        </div>
+                    </div>
+                    <div className= "form-group">
+                        <label className="control-label col-xs-4">Password: </label>
+                        <div className="col-xs-8">
+                            <input type="text" value="*********"/>
+                        </div>
+                    </div>
+                   </form>
                 {/*<form>Description:  <input type="text" value="I love to travel"/></form>*/}
                 {/*<form action="">Add Friends</form>*/}
                 {/*<div>List Friends</div>*/}
