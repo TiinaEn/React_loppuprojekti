@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {ListGroup, ListGroupItem} from 'react-bootstrap';
+import {deleteEntry} from "../ServiceClient";
 
-
-
-/* tämä komponentti ei toimi!*/
 
 class OneDestination extends Component {
     constructor(props) {
@@ -27,6 +25,23 @@ class OneDestination extends Component {
             }.bind(this));
     };
 
+    handleDeleteClick = (e) => {
+        e.preventDefault();
+        deleteEntry(this.state.id)
+            .then((function () {
+                this.returnToList()
+            }).bind(this))
+    }
+
+    handleCancelClick = (e) => {
+        e.preventDefault();
+        this.returnToList();
+    }
+
+    returnToList = () => {
+        this.props.history.push("/browse");
+    }
+
 
 
 
@@ -44,6 +59,8 @@ class OneDestination extends Component {
                     <ListGroupItem><b>Things to remember: </b>{details.description}</ListGroupItem>
                     <ListGroupItem>{details.weblink}</ListGroupItem>
                 </div>
+                <input type="submit" value="Remove" onClick={this.handleDeleteClick}/>
+                <input type="submit" value="Cancel" onClick={this.handleCancelClick}/>
             </ListGroup>
         );
     }
