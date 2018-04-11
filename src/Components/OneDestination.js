@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ListGroup} from 'react-bootstrap';
+import {ListGroup, ListGroupItem} from 'react-bootstrap';
 
 
 
@@ -39,10 +39,10 @@ class OneDestination extends Component {
 
                 <div>
                     <h3><b> {details.name} </b>({details.category})</h3>
-                    <p><b>Location: </b>{details.country}, {details.city}</p>
-                    <p><b>Rating: </b>{details.rating}/5</p>
-                    <p><b>Things to remember: </b>{details.description}</p>
-                    <p>{details.weblink}</p>
+                    <ListGroupItem><b>Location: </b>{details.country}, {details.city}</ListGroupItem>
+                    <ListGroupItem><b>Rating: </b>{details.rating}/5</ListGroupItem>
+                    <ListGroupItem><b>Things to remember: </b>{details.description}</ListGroupItem>
+                    <ListGroupItem>{details.weblink}</ListGroupItem>
                 </div>
             </ListGroup>
         );
