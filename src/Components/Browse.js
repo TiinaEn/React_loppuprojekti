@@ -4,6 +4,7 @@ import {fetchall} from "../ServiceClient";
 import '../App.css';
 import CountryList from "./CountryList";
 import CityList from "./CityList";
+import CityDestinations from './CityDestinations';
 
 class Browse extends Component {
     state = {destinations: []}
@@ -43,20 +44,26 @@ class Browse extends Component {
             // console.log("Active? " + name, name===this.state.activecity);
             return (<CityList cityname={name} active={name===this.state.activecity}
                               setactive={this.setactivecity} alldestinations={this.state.destinations}
-                              key={index}/>)
+                              key={index} {...this.props}/>)
         }.bind(this));
+
 
         return (
             <div className="Browse">
-                <div className="countrylistdiv">
+                <div  className="countrylistdiv">
                     <h1>Destinations</h1>
                     <h4>Choose a country</h4>
-                    <div>{kaikki}</div>
+
+                    <div class="col-xs-4">{kaikki}</div>
+
+                </div>
+                <div className="citylistdiv">
+                    <div class="col-xs-8" >
+                    {kaikkicityt}
+                    </div>
                 </div>
                 <hr/>
-                <div className="citylistdiv">
-                    {kaikkicityt}
-                </div>
+
             </div>
         );
     }
