@@ -6,6 +6,7 @@ import CountryList from "./CountryList";
 import CityList from "./CityList";
 import CityDestinations from './CityDestinations';
 
+
 class Browse extends Component {
     state = {destinations: []}
 
@@ -47,7 +48,6 @@ class Browse extends Component {
                               key={index} {...this.props}/>)
         }.bind(this));
 
-
         return (
             <div className="Browse">
                 <div  className="countrylistdiv">
@@ -63,6 +63,7 @@ class Browse extends Component {
                     </div>
                 </div>
                 <hr/>
+
 
             </div>
         );

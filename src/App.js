@@ -13,7 +13,7 @@ import history from './history';
 import CityList from './Components/CityList'
 import CityDestinations from './Components/CityDestinations'
 import {Link} from 'react-router-dom';
-
+import Register from './Components/Register'
 
 class App extends Component {
     state={search: ''}
@@ -21,23 +21,30 @@ class App extends Component {
         this.setState({search: searchword});
         history.push("/find/"+searchword);
     }
+
     render() {
         return (
             <div>
                 <Router history={history}>
                     <div className="App">
                         <Navigation dosearch={this.dosearch}/>
+
                         <Switch>
-                            <Route exact path="/logout" component={Login}/>
+                            <Route exact path="/register" component={Register}/>
+                            <Route exact path="/travelapp/login" component={Login}/>
                             <Route exact path="/createnew" component={CreateEntry}/>
                             <Route exact path="/browse" component={Browse}/>
                             <Route path="/browse/:country" component={Browse}/>
                             <Route path="/details" component={OneDestination}/>
                             <Route exact path="/profile" component={Profile}/>
+
+                            /*<Route exact path="/travelapp/home" component={MapApp}/>*/
                             <Route exact path="/" component={MapApp}/>
+
                             <Route path="/find/:searchword" component={SearchResult}/>
                             {/*  <Route path="/citylist/:country" component={CityList}/>
                             <Route path="/citydestinations/:city" component={CityDestinations}/>*/}
+
                         </Switch>
                     </div>
                 </Router>
@@ -61,6 +68,7 @@ class Navigation extends Component {
     render() {
         return (
             <div className="nav">
+
                 <img style={{width: '100%',}} src={skyline}/>
                 <div className="pull-right">
                     <form className="find" onSubmit={this.search}>
@@ -81,8 +89,22 @@ class Navigation extends Component {
                             <li><Link to={"/logout"}>Log out</Link></li>
                         </ul>
                     </div>
+
+                /*<div className="container">
+                    <ul className="pull-left">
+                        <li><a href="/travelapp/home">Home</a></li>
+                        <li><a href="/createnew">New note</a></li>
+                        <li><a href="/browse">Browse</a></li>
+                        <li><a href="/profile">Profile</a></li>
+                    </ul>
+                    <ul className="pull-right">
+                        <li><input type="text" placeholder="Search"/></li>
+                        <li><a href="/logout">Log out</a></li>
+                    </ul>*/
+
                 </div>
             </div>
+
         )
     }
 }
