@@ -23,6 +23,8 @@ class MapComponent2 extends Component {
             })
 
 
+
+
             var map = new maps.Map(node, mapConfig);        //presenting a map on our site
             var marker;
             var infoWindow;
@@ -34,11 +36,18 @@ class MapComponent2 extends Component {
             })
 
             function placeMarker(latLng, map) {
+
                 marker = new google.maps.Marker({
                     position: latLng,
                     map: map,
+
                 });
+
+                var saveMarker = ("Position" + marker.getPosition());
+                console.log(saveMarker);
+
                 map.panTo(latLng);
+
 
 
                 google.maps.event.addListener(marker, 'click', function () {
@@ -121,6 +130,7 @@ class MapComponent2 extends Component {
                 position: latLng,
                 map: map
             });
+
             map.panTo(latLng);
 
 
@@ -130,14 +140,20 @@ class MapComponent2 extends Component {
 
         }
 
+
         geocodeByAddress(this.state.address)
             .then(results => getLatLng(results[0]))
             .then(latLng => new google.maps.Marker({
                 map: map.panTo(latLng),
                 position: latLng,
                 map: map,
-            }))
-            .catch(error => console.error('Error', error))
+                icon: {
+                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                    scale: 5
+            }}))
+
+            .catch(error => console.error('Error', error)
+            )
     }
 
 
