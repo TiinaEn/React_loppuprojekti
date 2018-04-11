@@ -36,7 +36,14 @@ class OneDestination extends Component {
         console.log(details);
         return(
             <ListGroup>
-                <div>{details.description}</div>
+
+                <div>
+                    <h3><b> {details.name} </b>({details.category})</h3>
+                    <p><b>Location: </b>{details.country}, {details.city}</p>
+                    <p><b>Rating: </b>{details.rating}/5</p>
+                    <p><b>Things to remember: </b>{details.description}</p>
+                    <p>{details.weblink}</p>
+                </div>
             </ListGroup>
         );
     }
