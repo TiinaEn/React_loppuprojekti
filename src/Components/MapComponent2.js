@@ -58,7 +58,7 @@ class MapComponent2 extends Component {
                 '<option value="Shop">Shop</option>' +
                 '<option value="Sight">Sight</option>' +
                 '</select></td></tr>' +
-                '<tr><td></td><td><input type="button" value="Save" onclick="saveData()"/></td></tr>' +
+                '<tr><td></td><td><input type="button" value="Save" onclick= "saveData()"/></td></tr>' +
                 '</table>' +
                 '</div>'
             });
@@ -71,9 +71,6 @@ class MapComponent2 extends Component {
 
         }
     }
-
-
-
 
     constructor(props) {
         super(props)
@@ -110,6 +107,10 @@ class MapComponent2 extends Component {
             '</div>'
         });
 
+        var messageWindow = new google.maps.InfoWindow({
+            content: '<div>Location saved</div>'
+        });
+
 
         map.addListener('click', function (event) {      //function for adding a marker on a map
             placeMarker(event.latLng, map);
@@ -128,12 +129,6 @@ class MapComponent2 extends Component {
             });
 
         }
-        function saveData() {
-            var latLng = marker.getPosition();
-            var name = '';
-            var type = '';
-
-        }
 
         geocodeByAddress(this.state.address)
             .then(results => getLatLng(results[0]))
@@ -142,8 +137,7 @@ class MapComponent2 extends Component {
                 position: latLng,
                 map: map,
             }))
-            .catch(error => console.error('Error', error)
-            )
+            .catch(error => console.error('Error', error))
     }
 
 

@@ -63,14 +63,14 @@ class Navigation extends Component {
             <div className="nav">
                 <img style={{width: '100%',}} src={skyline}/>
                 <div className="pull-right">
-                    <form class="find" onSubmit={this.search}>
+                    <form className="find" onSubmit={this.search}>
                         <input type="text" value={this.state.searchtext} onChange={this.textChanged} placeholder="Search"/></form>
                 </div>
                 <div className="container-fluid">
                     <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="mainNavBar">
                         <ul className="nav navbar-nav">

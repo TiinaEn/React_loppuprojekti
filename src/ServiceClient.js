@@ -30,6 +30,20 @@ class ServiceClient extends Component {
             });
     }*/
 }
+
+export function createEntry(entry, callback) {
+    console.dir(entry)
+    fetch("/travelapp/create", {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(entry)
+
+    })
+        .then((function (response) {
+            callback();
+        }));
+}
+
 export default ServiceClient;
 export function fetchall() {
 
