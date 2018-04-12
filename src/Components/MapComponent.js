@@ -6,20 +6,17 @@ import CreateEntry from "./CreateEntry";
 
 
 class MapComponent extends Component {
-
     constructor(props) {
         super(props);
         {this.state = {latitude: 0, longitude: 0}}
     }
-
-
-
-
-    componentDidMount() {
+  componentDidMount() {
         this.loadMap();
     }
 
     loadMap() {
+
+
         if (this.props && this.props.google) {
             const {google} = this.props;
             const maps = google.maps;
@@ -39,7 +36,7 @@ class MapComponent extends Component {
 
             var map = new maps.Map(node, mapConfig);
             var lokaatio = {lat: 61.31245, lng: 25.57854}
-            var tallennettu = {}
+
             var marker;
 
 
@@ -49,22 +46,6 @@ class MapComponent extends Component {
             })
             console.log(lokaatio)
 
-            /*map.addListener('click', function(event) {
-                placeMarker(event.latLng, map);
-            })
-
-            function placeMarker(latLng, map) {
-                var marker = new google.maps.Marker({
-                    position: latLng,
-                    map: map
-                });
-                map.panTo(latLng);
-
-                google.maps.event.addListener(marker, 'click', function() {
-                   infoWindow.open(map, marker);
-                });
-
-            }*/
 
             var infoWindow = new google.maps.InfoWindow({
                 content: '<div>' +

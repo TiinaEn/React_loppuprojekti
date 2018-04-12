@@ -4,6 +4,11 @@ import ReactDOM from 'react-dom';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 
+
+
+
+//Let user add markers on the map
+
 class MapComponent2 extends Component {
 
 
@@ -20,27 +25,15 @@ class MapComponent2 extends Component {
             const mapConfig = Object.assign({}, {
                 center: {lat: 60, lng: 25},
                 zoom: 5,
-
-
                 mapTypeId: 'roadmap'
             })
 
 
             var map = new maps.Map(node, mapConfig);        //presenting a map on our site
             var marker;
-            var infoWindow;
-            var messageWindow;
-            var markers = [];
             var self = this;
             map.setOptions({draggableCursor:'crosshair'});
 
-
-
-
-            {/*    <div className="buttons">
-                <input onclick="deleteMarkers();" type=button value"Remove Markers"/>
-            </div>*/
-            }
 
             map.addListener('click', function (event) {      //function for adding a marker on a map
                 placeMarker(event.latLng, map);
@@ -62,50 +55,9 @@ class MapComponent2 extends Component {
                 })
 
 
-              /*  markers.push(marker);*/
                 map.panTo(latLng);
 
-
-
-
-                /*addAllMarkers(map);*/
-
-/*                function addAllMarkers(map) {
-                    for (var i = 0; i < markers.length; i++) {
-                        markers[i].setMap(map);
-                        console.log(i);
-                    }
-                }*/
-
-
-                google.maps.event.addListener(marker, 'click', function () {
-                    infoWindow.open(map, marker);    //presenting an infowindow when double clicking the marker
-                });
-
-            }
-
-            infoWindow = new google.maps.InfoWindow({   //field for searching a place
-                content: '<div>' +
-                '<table>' +
-                '<tr><td>Name:</td><td><input type="text" id="name"/></td></tr>' +
-                '<tr><td>Address:</td> <td><input type="text" id="address"/></td></tr>' +
-                '<tr><td>Type:</td><td><select id="type">' +
-                '<option value="Restaurant">Restaurant</option>' +
-                '<option value="Hotel">Hotel</option>' +
-                '<option value="Shop">Shop</option>' +
-                '<option value="Sight">Sight</option>' +
-                '</select></td></tr>' +
-                '<tr><td></td><td><input type="button" value="Save" onclick= "saveData()"/></td></tr>' +
-                '</table>' +
-                '</div>'
-            });
-
-            messageWindow = new google.maps.InfoWindow({
-                content: '<div>Location saved</div>'
-            });
-
-
-        }
+            }}
     }
 
     constructor(props) {
@@ -125,7 +77,7 @@ class MapComponent2 extends Component {
             mapTypeId: 'roadmap'
         })
 
-        var map = new maps.Map(node, mapConfig);    //adding marker pazed on search
+        var map = new maps.Map(node, mapConfig);    //adding marker based on search
         var marker;
         var infoWindow = new google.maps.InfoWindow({   //field for searching a place
             content: '<div>' +
@@ -206,10 +158,10 @@ class MapComponent2 extends Component {
                 <div ref="map" style={style}>
                     loading map...
                 </div>
-                <form onSubmit={this.handleFormSubmit}>
+                {/*<form onSubmit={this.handleFormSubmit}>
                     <PlacesAutocomplete inputProps={inputProps}/>
                     <button type="submit">Submit</button>
-                </form>
+                </form>*/}
             </div>
         )
     }
