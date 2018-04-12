@@ -1,3 +1,5 @@
+
+
 .lomake {
     width: 40%;
 }
@@ -6,11 +8,19 @@
     width: 100%;
 }
 
+.form-horizontal{
+    padding: 2%;
+}
+
 .container {
     padding: 2%;
-    align-items: center;
+   align-content: center;
+text-align: center;
 }
 
 .parent-container {
+    /*
     background-color: #f2f2f2;
+    */
+    min-height: 100%;
 }

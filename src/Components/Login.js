@@ -1,15 +1,3 @@
-/*
-
-import React from 'react';
-
-export default class Login extends React.Component {
-    render(){return(
-    <div>Login-komponentti</div>
-)}}
-*/
-
-
-
 import React, { Component } from 'react';
 import {Form, FormGroup, ControlLabel, ButtonGroup, Button, FormControl, HelpBlock} from 'react-bootstrap';
 import {notification} from 'antd';
@@ -17,11 +5,11 @@ import {login} from '../Service';
 import {ACCESS_TOKEN} from '../Service'
 import {getCurrentUser} from '../helpers/LoginHelper';
 import {Link} from 'react-router-dom';
-
-
-
 import '../App.css';
 import {sigin, signin} from "../Service";
+import Register from "./Register";
+import {Router, Switch, Route} from 'react-router-dom';
+
 
 class Login extends Component {
     constructor(props) {
@@ -77,27 +65,56 @@ class Login extends Component {
     }
 
 
+
     render() {
+
+
+        <Switch>
+            <Route exact path="/register" component={Register}/>
+            <Route component={Login}/>
+        </Switch>
+
+
         return (
+            <div>
             <div className="Login">
-                <form onSubmit={this.handleSubmit}>
+
+                <h3> Sign in</h3>
+
+
+                <form class="form-horizontal" onSubmit={this.handleSubmit}>
+                    <div className="form-group" value={this.state.usernameOrEmail} onChange={this.handleUsernameChange}>
+                        <label htmlFor="usernameOrEmail" class="control-label col-sm-4">Username</label>
+                        <div class="col-sm-4">
+                            <input type="text" className="form-control"/>
+                        </div>
+                    </div>
+
+                    <div className="form-group" value={this.state.password} onChange={this.handlePasswordChange}>
+                        <label htmlFor="usernameOrEmail" class="control-label col-sm-4">Password</label>
+                            <div class="col-sm-4">
+                                <input type="text" className="form-control"/>
+                            </div>
+                        </div>
+
+                {/*<form onSubmit={this.handleSubmit}>
                     <FormGroup controlId="usernameOrEmail">
-                        <ControlLabel>Username</ControlLabel>
-                        <FormControl
-                            autoFocus
-                            type="text"
-                            value={this.state.usernameOrEmail}
-                            onChange={this.handleUsernameChange}
-                        />
-                    </FormGroup>
-                    <FormGroup controlId="password">
+                    <ControlLabel>Username</ControlLabel>
+                    <FormControl
+                        autoFocus
+                        type="text"
+                        value={this.state.usernameOrEmail}
+                        onChange={this.handleUsernameChange}
+                    />
+                </FormGroup>*/}
+                 {/*   <FormGroup controlId="password">
                         <ControlLabel>Password</ControlLabel>
                         <FormControl
                             value={this.state.password}
                             onChange={this.handlePasswordChange}
                             type="password"
                         />
-                    </FormGroup>
+                    </FormGroup>*/}
                     <Button
                         type="submit"
                 //        onClick={this.handleSubmit()}
@@ -106,8 +123,9 @@ class Login extends Component {
                     </Button>
                 </form>
                 <br/>
-                <h4>Are you not registered yet? Register <Link to={"register/"}>HERE</Link></h4>
+                <h4>Are you not registered yet? Register <Link to={"/register"}>HERE</Link></h4>
 
+            </div>
             </div>
         );
     }

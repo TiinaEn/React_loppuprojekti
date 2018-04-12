@@ -31,7 +31,7 @@ class App extends Component {
                 <Switch>
 
                     <Route exact path="/register" component={Register}/>
-                    <Route exact path="/travelapp/login" component={Login}/>
+                    <Route exact path="/login" component={Login}/>
 
                     <Route exact path="/createnew" component={CreateEntry}/>
                     <Route exact path="/browse" component={Browse}/>
@@ -112,6 +112,5 @@ class Navigation extends Component {
         )
     }
 }
-
 
 export default App;
