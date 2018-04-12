@@ -51,4 +51,9 @@ body #root div .App .nav .container-fluid .navbar-toggle {
     padding: 20px 20px;
 }
 
+#sign {
+    display: inline;
+    padding: 10px;
+}
+
 

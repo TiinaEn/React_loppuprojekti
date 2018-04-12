@@ -79,7 +79,7 @@ class Login extends Component {
             <div>
             <div className="Login">
 
-                <h3> Sign in</h3>
+                <h3> Sign In</h3>
 
 
                 <form class="form-horizontal" onSubmit={this.handleSubmit}>
