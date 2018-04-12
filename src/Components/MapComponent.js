@@ -99,7 +99,7 @@ class MapComponent extends Component {
         return (
             <div ref="map" style={style}>
                 loading map...
-               
+
 
             </div>
         )

@@ -44,11 +44,11 @@ export function createEntry(entry, callback) {
         }));
 }
 
-export function updateEntry(entry, callback) {
-    fetch("/travelapp/destinations/{id}", {
+export function updateEntry(destinations, callback) {
+    fetch('/travelapp/destinations/'+destinations.id, {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(entry)
+        body: JSON.stringify(destinations)
     })
         .then((function (response) {
             callback();

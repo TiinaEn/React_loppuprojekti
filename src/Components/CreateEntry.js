@@ -51,6 +51,7 @@ class CreateEntry extends Component {
                         <label className="control-label col-xs-2">Category: </label>
                         <div className="col-xs-10">
                             <select className="form-control" value={this.state.category} onChange={this.handleCategoryChange}>
+                                <option>Choose category</option>
                                 <option>Restaurants</option>
                                 <option>Hotels</option>
                                 <option>Shops</option>
@@ -87,6 +88,7 @@ class CreateEntry extends Component {
                         <label className="control-label col-xs-2">Rating: </label>
                         <div className="col-xs-10">
                             <select className="form-control" value={this.state.rating} onChange={this.handleRatingChange}>
+                                <option>Choose rating</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -98,7 +100,7 @@ class CreateEntry extends Component {
                     <div className="form-group">
                         <label className="control-label col-xs-2">Weblink: </label>
                         <div className="col-xs-10">
-                            <input className="form-control" type="text" placeholder="Weblink" value={this.state.weblink} onChange={this.handleWeblinkChange}/>
+                            <input className="form-control" type="url" placeholder="Weblink" value={this.state.weblink} onChange={this.handleWeblinkChange}/>
                         </div>
                     </div>
 {/*
