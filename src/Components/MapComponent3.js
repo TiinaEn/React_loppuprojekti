@@ -67,7 +67,7 @@ class MapComponent3 extends Component {
 
         const style = {
             width: '100vw',
-            height: '100vh'
+            height: '77vh'
         }
 
 

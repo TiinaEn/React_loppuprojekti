@@ -119,8 +119,6 @@ class OneDestination extends Component {
                     <ListGroupItem><b>Rating: </b>{details.rating}/5</ListGroupItem>
                     <ListGroupItem><b>Things to remember: </b>{details.description}</ListGroupItem>
                     <ListGroupItem>{details.weblink}</ListGroupItem>
-                    <ListGroupItem>{details.latitude}</ListGroupItem>
-                    <ListGroupItem>{details.longitude}</ListGroupItem>
                 </div>
                 {/*<input type="submit" value="Update" onClick={this.handleUpdateClick}/>
                 <input type="submit" value="Remove" onClick={this.handleDeleteClick}/>
