@@ -19,7 +19,7 @@ class Register extends Component {
             name: {value: ''},
             username: {value: ''},
             email: {value: ''},
-            password: {value: ''},
+            password: {value: '', isValid: true, message: ''},
             confirmPassword: {value: ''}
 
         }
@@ -47,12 +47,24 @@ class Register extends Component {
         this.setState({
             password: event.target.value
         });
+ //       validatePassword();
     }
     handlePasswordConChange = event => {
         this.setState({
             confirmPassword: event.target.value
         });
     }
+   /* validatePassword = () => {
+        var state = this.state.password.value
+        if (state.length<6) {
+            state.password.isValid = false;
+            state.password.message = 'Password has to be at least six characters long.'
+
+            this.setState( {
+                password {}
+            })
+        }
+    }*/
 
 
     handleSignUp = event => {

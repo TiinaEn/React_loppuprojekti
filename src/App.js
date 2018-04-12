@@ -83,6 +83,11 @@ class Navigation extends Component {
         history.push("/login");
     }
 
+    isLoggedin () {
+        const Token = localStorage.getItem(ACCESS_TOKEN);
+        return !!Token;
+    }
+
     textChanged = (event) => {
         this.setState({searchtext: event.target.value});
     }
@@ -94,8 +99,11 @@ class Navigation extends Component {
                 <div className="pull-right">
                     <form className="find" onSubmit={this.search}>
                         <input className="rounded" type="text" value={this.state.searchtext} onChange={this.textChanged} placeholder="Search"/>
-                        <button className="btn-link" onClick={this.logoutfunction}>SIGN IN / SIGN OUT</button>
-                    </form>
+                        {
+                            (this.isLoggedin()) ? ( <button className="btn-link" onClick={this.logoutfunction}>SIGN OUT</button>) :
+                                ('')
+                        }
+                        </form>
                 </div>
                 <div className="container-fluid">
                     <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
