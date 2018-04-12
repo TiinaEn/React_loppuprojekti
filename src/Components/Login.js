@@ -15,6 +15,9 @@ import {Form, FormGroup, ControlLabel, ButtonGroup, Button, FormControl, HelpBlo
 import {notification} from 'antd';
 import {login} from '../Service';
 import {ACCESS_TOKEN} from '../Service'
+import {getCurrentUser} from '../helpers/LoginHelper';
+import {Link} from 'react-router-dom';
+
 
 
 import '../App.css';
@@ -51,11 +54,17 @@ class Login extends Component {
         }
         signin(loginRequest)
             .then(response => {
+                console.log("Signin", response);
                 localStorage.setItem(ACCESS_TOKEN, response.accessToken)
                 notification.success({
                     description: "You're successfully logged in!"
                 });
-                this.props.history.push("travelapp/home");
+                let user;
+                getCurrentUser().then(function(current){
+                    user=current;
+                    console.dir(user);
+                    this.props.history.push("/");
+                }.bind(this));
             }).catch(error => {
             notification.error({
                 description: error.message || 'Sorry! Something went wrong. Please try again!'
@@ -96,7 +105,8 @@ class Login extends Component {
                     >Submit
                     </Button>
                 </form>
-
+                <br/>
+                <h4>Are you not registered yet? Register <Link to={"register/"}>HERE</Link></h4>
 
             </div>
         );

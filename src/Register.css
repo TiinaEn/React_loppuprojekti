@@ -1,0 +1,16 @@
+.lomake {
+    width: 40%;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.container {
+    padding: 2%;
+    align-items: center;
+}
+
+.parent-container {
+    background-color: #f2f2f2;
+}

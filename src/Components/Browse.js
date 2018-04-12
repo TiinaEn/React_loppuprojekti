@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {fetchall} from "../Service";
+import {ACCESS_TOKEN, fetchall} from "../Service";
 
 import '../App.css';
 import CountryList from "./CountryList";
@@ -7,18 +7,23 @@ import CityList from "./CityList";
 import CityDestinations from './CityDestinations';
 
 
+
 class Browse extends Component {
     state = {destinations: []}
 
     componentDidMount() {
-        fetch('/travelapp/destinations')
+        fetch('/travelapp/destinations', {
+            headers:{'Authorization': 'Bearer ' + localStorage.getItem(ACCESS_TOKEN)}
+        })
             .then(function (response) {
-                return response.json();
-
+                console.log("Browse, fetch", response)
+                if (response.status===200)
+                    return response.json();
+                console.log("ERROR FETCHING DESTINATIONS: ", response);
             })
             .then(function (json) {
+                console.log("Browse, fetch - json", json)
                 this.setState({destinations: json});
-
             }.bind(this));
     }
 
@@ -54,11 +59,11 @@ class Browse extends Component {
                     <h1>Destinations</h1>
                     <h4>Choose a country</h4>
 
-                    <div class="col-xs-4">{kaikki}</div>
+                    <div className="col-xs-4">{kaikki}</div>
 
                 </div>
                 <div className="citylistdiv">
-                    <div class="col-xs-8" >
+                    <div className="col-xs-8" >
                     {kaikkicityt}
                     </div>
                 </div>

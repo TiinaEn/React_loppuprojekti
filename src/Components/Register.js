@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import {signup} from '../Service';
 import {notification} from 'antd';
-import {Button} from 'react-bootstrap';
+import '../Register.css';
 
+import {Button, Form} from 'react-bootstrap';
+
+/*
+import {Form, FormGroup, ControlLabel, FormControl, Button, Label, Input, FormText, Container, Row, Col} from 'react-bootstrap'
+*/
 
 class Register extends Component {
 
@@ -12,7 +17,8 @@ class Register extends Component {
             name: {value: ''},
             username: {value: ''},
             email: {value: ''},
-            password: {value: ''}
+            password: {value: ''},
+            confirmPassword: {value: ''}
 
         }
     }
@@ -38,6 +44,11 @@ class Register extends Component {
     handlePasswordChange = event => {
         this.setState({
             password: event.target.value
+        });
+    }
+    handlePasswordConChange = event => {
+        this.setState({
+            confirmPassword: event.target.value
         });
     }
 
@@ -66,36 +77,96 @@ class Register extends Component {
         });
     }
 
+    validateForm() {
+        return (
+            this.state.name.length > 0 &&
+            this.state.email.length > 0 &&
+            this.state.password.length > 0 &&
+            this.state.password === this.state.confirmPassword
+        );
+    }
+
 
     render() {
         return (
-            <div>
+            <div className="parent-container">
 
-                    <form onSubmit={this.handleSignUp}>
-                        <div className="form-group" value={this.state.name} onChange={this.handleNameChange}>
-                            <label htmlFor="RegistrationForm">Name</label>
-                            <input type="text" className="form-control"/>
-                        </div>
-                        <div className="form-group" value={this.state.username} onChange={this.handleUsernameChange}>
-                            <label htmlFor="RegistrationForm">Username</label>
-                            <input type="text" className="form-control"/>
-                        </div>
-                        <div className="form-group" value={this.state.email} onChange={this.handleEmailChange}>
-                            <label htmlFor="RegistrationForm">Email</label>
-                            <input type="email" className="form-control"/>
-                        </div>
-                        <div className="form-group" value={this.state.password} onChange={this.handlePasswordChange}>
-                            <label htmlFor="RegistrationForm">Password</label>
-                            <input type="password" className="form-control"/>
-                        </div>
-                        <Button
-                            type="submit"
-                         //   onClick={this.handleSignUp}
-                            /* disabled={!this.validateForm()}*/
-                        >Submit
-                        </Button>
-                    </form>
+            <div className="container">
+
+               {/* <Form horizontal>
+                    <FormGroup controlId="formHorizontalEmail">
+                        <Col componentClass={ControlLabel} sm={2}>
+                            Email
+                        </Col>
+                        <Col sm={4}>
+                            <FormControl value={this.state.name} onChange={this.handleNameChange} type="text"  />
+                        </Col>
+                    </FormGroup>
+                </Form>*/}
+
+                <Form className="lomake" onSubmit={this.handleSignUp}>
+                    <div className="form-group" value={this.state.name} onChange={this.handleNameChange}>
+                        <label htmlFor="RegistrationForm">Name</label>
+                        <input type="text" className="form-control"/>
+                    </div>
+                    <div className="form-group" value={this.state.username} onChange={this.handleUsernameChange}>
+                        <label htmlFor="RegistrationForm">Username</label>
+                        <input type="text" className="form-control"/>
+                    </div>
+                    <div className="form-group" value={this.state.email} onChange={this.handleEmailChange}>
+                        <label htmlFor="RegistrationForm">Email</label>
+                        <input type="email" className="form-control"/>
+                    </div>
+                    <div className="form-group" value={this.state.password} onChange={this.handlePasswordChange}>
+                        <label htmlFor="RegistrationForm">Password</label>
+                        <input type="password" className="form-control"/>
+                    </div>
+                    <div className="form-group" value={this.state.confirmPassword} onChange={this.handlePasswordConChange}>
+                        <label htmlFor="RegistrationForm">Confirm password</label>
+                        <input type="password" className="form-control"/>
+                    </div>
+                    <Button
+                        type="submit"
+                        //   onClick={this.handleSignUp}
+                        disabled={!this.validateForm()}
+                    >Submit
+                    </Button>
+                </Form>
             </div>
+            </div>
+           /* <div>
+
+                <form onSubmit={this.handleSignUp}>
+                    <div className="form-group" value={this.state.name} onChange={this.handleNameChange}>
+                        <label htmlFor="RegistrationForm">Name</label>
+                        <input type="text" className="form-control"/>
+                    </div>
+                    <div className="form-group" value={this.state.username} onChange={this.handleUsernameChange}>
+                        <label htmlFor="RegistrationForm">Username</label>
+                        <input type="text" className="form-control"/>
+                    </div>
+                    <div className="form-group" value={this.state.email} onChange={this.handleEmailChange}>
+                        <label htmlFor="RegistrationForm">Email</label>
+                        <input type="email" className="form-control"/>
+                    </div>
+                    <div className="form-group" value={this.state.password} onChange={this.handlePasswordChange}>
+                        <label htmlFor="RegistrationForm">Password</label>
+                        <input type="password" className="form-control"/>
+                    </div>
+                    <div className="form-group" value={this.state.confirmPassword} onChange={this.handlePasswordConChange}>
+                        <label htmlFor="RegistrationForm">Confirm password</label>
+                        <input type="password" className="form-control"/>
+                    </div>
+                    <Button
+                        type="submit"
+                        //   onClick={this.handleSignUp}
+                         disabled={!this.validateForm()}
+                    >Submit
+                    </Button>
+                </form>
+            </div>*/
+
+
         )
     }
 }
