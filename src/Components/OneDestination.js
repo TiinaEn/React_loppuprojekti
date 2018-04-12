@@ -19,11 +19,14 @@ class OneDestination extends Component {
     state = {destinations: []}
 
     componentDidMount() {
+        const token = localStorage.getItem(ACCESS_TOKEN);
+        console.log("accesstoken:", token);
         fetch('/travelapp/destinations/' + this.state.id, {
-            headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
+            headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + token },
             accept: 'application/json'
         })
             .then(function (response) {
+                console.log("OneDestination",response)
                 return response.json();
 
             })

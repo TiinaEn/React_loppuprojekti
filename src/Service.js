@@ -47,8 +47,8 @@ export function createEntry(entry, callback) {
 }
 
 export function updateEntry(destinations, callback) {
-    fetch('/travelapp/destinations/'+destinations.id, {
-        method: 'PUT',
+    fetch('/travelapp/destinations/modify/'+destinations.id, {
+        method: 'POST',
         headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
         body: JSON.stringify(destinations)
     })
@@ -59,9 +59,9 @@ export function updateEntry(destinations, callback) {
 }
 
 export function deleteEntry(id) {
-    return fetch('/travelapp/destinations/'+id, {
-        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
-        method: 'DELETE'
+    return fetch('/travelapp/destinations/delete/'+id, {
+        headers: {'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
+        method: 'GET'
     })
         .then(function (response) {
         })
