@@ -54,11 +54,11 @@ class Browse extends Component {
                     <h1>Destinations</h1>
                     <h4>Choose a country</h4>
 
-                    <div class="col-xs-4">{kaikki}</div>
+                    <div className="col-xs-4">{kaikki}</div>
 
                 </div>
                 <div className="citylistdiv">
-                    <div class="col-xs-8" >
+                    <div className="col-xs-8" >
                     {kaikkicityt}
                     </div>
                 </div>
