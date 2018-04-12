@@ -14,9 +14,9 @@ class OneDestination extends Component {
         const queryString = require('query-string');
         const params = queryString.parse(props.location.search);
         const id = params['id'];
-        this.state = {destinations: {name: '', description: ''}, id: id, longitude: 0, latitude: 0};
+        this.state = {destinations: {}, id: id};
     }
-    state = {destinations: []}
+   /* state = {destinations: []}*/
 
     componentDidMount() {
         fetch('/travelapp/destinations/' + this.state.id, {
@@ -105,7 +105,7 @@ class OneDestination extends Component {
 
     render() {
         var details = this.state.destinations;
-        /*console.log(details);*/
+       /* console.log(details);*/
         return(
             <div>
             <ListGroup>
@@ -116,6 +116,8 @@ class OneDestination extends Component {
                     <ListGroupItem><b>Rating: </b>{details.rating}/5</ListGroupItem>
                     <ListGroupItem><b>Things to remember: </b>{details.description}</ListGroupItem>
                     <ListGroupItem>{details.weblink}</ListGroupItem>
+                    <ListGroupItem>{details.latitude}</ListGroupItem>
+                    <ListGroupItem>{details.longitude}</ListGroupItem>
                 </div>
                 {/*<input type="submit" value="Update" onClick={this.handleUpdateClick}/>
                 <input type="submit" value="Remove" onClick={this.handleDeleteClick}/>
