@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import {Router, Switch, Route} from 'react-router-dom';
 import Login from './Components/Login'
+
 import CreateEntry from './Components/CreateEntry'
 import Browse from './Components/Browse'
 import Profile from './Components/Profile'
@@ -31,7 +32,7 @@ class App extends Component {
                 <Switch>
 
                     <Route exact path="/register" component={Register}/>
-                    <Route exact path="/travelapp/login" component={Login}/>
+                    <Route exact path="/login" component={Login}/>
 
                     <Route exact path="/createnew" component={CreateEntry}/>
                     <Route exact path="/browse" component={Browse}/>
@@ -77,6 +78,11 @@ class Navigation extends Component {
         this.props.dosearch(searchword);
     }
 
+    logoutfunction = () => {
+        localStorage.removeItem(ACCESS_TOKEN);
+        history.push("/login");
+    }
+
     textChanged = (event) => {
         this.setState({searchtext: event.target.value});
     }
@@ -102,7 +108,7 @@ class Navigation extends Component {
                             <li><Link to={"/createnew"}>New note</Link></li>
                             <li><Link to={"/browse"}>Browse</Link></li>
                             <li><Link to={"/profile"}>Profile</Link></li>
-                            <li><Link to={"/logout"}>Log out</Link></li>
+                            <li id="sign"><button onClick={this.logoutfunction}>SIGN IN / SIGN OUT</button></li>
                         </ul>
                     </div>
 
@@ -112,6 +118,5 @@ class Navigation extends Component {
         )
     }
 }
-
 
 export default App;
