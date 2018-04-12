@@ -1,3 +1,20 @@
+.btn-link {
+    color: white;
+}
+
+.btn-link:hover {
+    color: darkgrey;
+}
+
+.btn {color: black;
+}
+.form-control {
+    width: 80%;
+}
+.rounded {
+    border-radius: 3px;
+}
+
 .App {
     text-align: center;
 }
@@ -23,6 +40,7 @@
     font-weight: bold;
     padding: 14px 20px;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 .nav li {
@@ -32,6 +50,9 @@
 .nav {
     background-color: darkslategrey;
     overflow: visible;
+}
+ul.nav a:hover { background-color: darkslategray;
+    color: darkgrey;
 }
 
 span.icon-bar {
@@ -54,6 +75,9 @@ body #root div .App .nav .container-fluid .navbar-toggle {
 #sign {
     display: inline;
     padding: 10px;
+}
+.picture {
+    width: 100%;
 }
 
 

@@ -39,7 +39,7 @@ class Profile extends Component {
                 {/*<form action="">Add Friends</form>*/}
                 {/*<div>List Friends</div>*/}
                 <br/>
-                <input type="submit" value="Save Changes"/>
+                <input className="btn btn-link" type="submit" value="Save Changes"/>
 
 
             </div>

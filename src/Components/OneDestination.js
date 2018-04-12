@@ -198,9 +198,9 @@ class OneDestination extends Component {
                                 <input className="form-control" type="url" placeholder="Weblink" value={details.weblink} onChange={this.handleWeblinkChange}/>
                             </div>
                         </div>
-                        <input className="btn btn-default btn-md" type="submit" value="Remove" onClick={this.handleDeleteClick}/>
-                        <input className="btn btn-default btn-md" type="submit" value="Back to Browse" onClick={this.handleCancelClick}/>
-                        <input className="btn btn-default btn-md" type="submit" value="Update" onClick={this.handleUpdateClick}/>
+                        <input className="btn btn-link" type="submit" value="Remove" onClick={this.handleDeleteClick}/>
+                        <input className="btn btn-link" type="submit" value="Back to Browse" onClick={this.handleCancelClick}/>
+                        <input className="btn btn-link" type="submit" value="Update" onClick={this.handleUpdateClick}/>
                         {/*<input type="submit" value="Update" onClick={this.handleUpdateClick}/>
                         <input type="submit" value="Remove" onClick={this.handleDeleteClick}/>
                         <input type="submit" value="Return" onClick={this.handleCancelClick}/>*/}

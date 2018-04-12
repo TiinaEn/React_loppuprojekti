@@ -206,10 +206,10 @@ class MapComponent2 extends Component {
                 <div ref="map" style={style}>
                     loading map...
                 </div>
-                <form onSubmit={this.handleFormSubmit}>
+                {/*<form onSubmit={this.handleFormSubmit}>
                     <PlacesAutocomplete inputProps={inputProps}/>
                     <button type="submit">Submit</button>
-                </form>
+                </form>*/}
             </div>
         )
     }
