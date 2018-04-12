@@ -84,15 +84,15 @@ class Login extends Component {
 
                 <form class="form-horizontal" onSubmit={this.handleSubmit}>
                     <div className="form-group" value={this.state.usernameOrEmail} onChange={this.handleUsernameChange}>
-                        <label htmlFor="usernameOrEmail" class="control-label col-sm-4">Username</label>
-                        <div class="col-sm-4">
+                        <label htmlFor="usernameOrEmail" class="control-label col-sm-5">Username</label>
+                        <div class="col-sm-3">
                             <input type="text" className="form-control"/>
                         </div>
                     </div>
 
                     <div className="form-group" value={this.state.password} onChange={this.handlePasswordChange}>
-                        <label htmlFor="usernameOrEmail" class="control-label col-sm-4">Password</label>
-                            <div class="col-sm-4">
+                        <label htmlFor="usernameOrEmail" class="control-label col-sm-5">Password</label>
+                            <div class="col-sm-3">
                                 <input type="password" className="form-control"/>
                             </div>
                         </div>
