@@ -108,7 +108,7 @@ class Navigation extends Component {
                             <li><Link to={"/createnew"}>New note</Link></li>
                             <li><Link to={"/browse"}>Browse</Link></li>
                             <li><Link to={"/profile"}>Profile</Link></li>
-                            <li><button onClick={this.logoutfunction}>Logout</button></li>
+                            <li id="sign"><button onClick={this.logoutfunction}>SIGN IN / SIGN OUT</button></li>
                         </ul>
                     </div>
 
