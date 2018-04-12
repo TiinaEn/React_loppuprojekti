@@ -111,11 +111,12 @@ class CreateEntry extends Component {
                     <textarea type="text" placeholder="User" value={this.state.user} onChange={this.handleUserChange}/>
                     <br/>
 */}
-                    <input type="submit" value="Save" onClick={this.handleCreateClick}/>
+
                 </form>
                 </div>
                 <br/>
                 <MapComponent2 setdestcoords={this.handleCoordChange}/>
+                <input className="btn btn-link" type="submit" value="Save" onClick={this.handleCreateClick}/>
             </div>
         );
     }

@@ -90,11 +90,12 @@ class Navigation extends Component {
     render() {
         return (
             <div className="nav">
-
-                <img style={{width: '100%',}} src={skyline}/>
+                <img className="picture" src={skyline}/>
                 <div className="pull-right">
                     <form className="find" onSubmit={this.search}>
-                        <input type="text" value={this.state.searchtext} onChange={this.textChanged} placeholder="Search"/></form>
+                        <input className="rounded" type="text" value={this.state.searchtext} onChange={this.textChanged} placeholder="Search"/>
+                        <button className="btn-link" onClick={this.logoutfunction}>SIGN IN / SIGN OUT</button>
+                    </form>
                 </div>
                 <div className="container-fluid">
                     <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
@@ -108,7 +109,7 @@ class Navigation extends Component {
                             <li><Link to={"/createnew"}>New note</Link></li>
                             <li><Link to={"/browse"}>Browse</Link></li>
                             <li><Link to={"/profile"}>Profile</Link></li>
-                            <li id="sign"><button onClick={this.logoutfunction}>SIGN IN / SIGN OUT</button></li>
+
                         </ul>
                     </div>
 

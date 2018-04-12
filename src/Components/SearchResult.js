@@ -11,8 +11,8 @@ class SearchResult extends Component {
     }
 
     fetchDestinations = (foo) => {
-        return fetch('/travelapp/find?n=' + this.props.match.params.searchword, {
-            headers: {'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) }
+        return fetch('/travelapp/find/' + this.props.match.params.searchword, {
+            headers: {'Authorization' : 'Bearer ' + localStorage.getItem(ACCESS_TOKEN) }
         })
             .then(function (response) {
                 return response.json();
@@ -25,25 +25,13 @@ class SearchResult extends Component {
             }.bind(this));
     }
 
-    async shouldComponentUpdate(nextProps, nextState) {
-        console.log("ShouldUpdate?")
-        if (!this.state.founddestinationsrendered && nextProps.match.params.searchword === this.props.match.params.searchword)
-            return false;
-        this.fetchDestinations(true);
-        console.log("ShouldUpdate", true);
-        return true;
-    }
-
-    // componentDidUpdate() {
-    //     fetch('/travelapp/find?n=' + this.props.match.params.searchword)
-    //         .then(function (response) {
-    //             return response.json();
-    //
-    //         })
-    //         .then(function (json) {
-    //             this.setState({foundDestinations: json, founddestinationsrendered: false});
-    //
-    //         }.bind(this));
+    // async shouldComponentUpdate(nextProps, nextState) {
+    //     console.log("ShouldUpdate?")
+    //     if (!this.state.founddestinationsrendered && nextProps.match.params.searchword === this.props.match.params.searchword)
+    //         return false;
+    //     this.fetchDestinations(true);
+    //     console.log("ShouldUpdate", true);
+    //     return true;
     // }
 
     render() {

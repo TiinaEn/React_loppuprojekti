@@ -66,8 +66,11 @@ class Profile extends Component {
                 {/*<form action="">Add Friends</form>*/}
                 {/*<div>List Friends</div>*/}
                 <br/>
+
+                <input className="btn btn-link" type="submit" value="Save Changes"/>
                 <input type="submit" value="Save Changes"/>
                 {/*<input type="submit" value="Save Changes" onClick={this.handleCreateClick}/>*/}
+
 
 
             </div>
