@@ -61,7 +61,6 @@ class Register extends Component {
             username: this.state.username,
             password: this.state.password
         };
-        console.log("Register.signup", signupRequest);
         signup(signupRequest)
             .then(response => {
                 notification.success({

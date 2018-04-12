@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {ListGroup, ListGroupItem,Form,FormGroup,ControlLabel,FormControl} from 'react-bootstrap';
-import {deleteEntry} from "../Service";
+import {ACCESS_TOKEN, deleteEntry} from "../Service";
 
 import MapComponent from "./MapComponent";
 import {GoogleApiWrapper} from "google-maps-react";
@@ -19,7 +19,10 @@ class OneDestination extends Component {
     state = {destinations: []}
 
     componentDidMount() {
-        fetch('/travelapp/destinations/' + this.state.id, {accept: 'application/json'})
+        fetch('/travelapp/destinations/' + this.state.id, {
+            headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
+            accept: 'application/json'
+        })
             .then(function (response) {
                 return response.json();
 

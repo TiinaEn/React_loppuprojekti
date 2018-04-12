@@ -10,7 +10,7 @@ class ServiceClient extends Component {
         function fetchall(destinations,callback) {
             return fetch(baseurl + '/destinations/', {
                 method: 'GET',
-                headers: {'Content-Type' : 'application/json'},
+                headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
                 body: JSON.stringify(destinations)
             })
                 .then(function (response) {
@@ -37,7 +37,7 @@ export function createEntry(entry, callback) {
     console.dir(entry)
     fetch("/travelapp/create", {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
         body: JSON.stringify(entry)
 
     })
@@ -49,7 +49,7 @@ export function createEntry(entry, callback) {
 export function updateEntry(destinations, callback) {
     fetch('/travelapp/destinations/'+destinations.id, {
         method: 'PUT',
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
         body: JSON.stringify(destinations)
     })
         .then((function (response) {
@@ -60,6 +60,7 @@ export function updateEntry(destinations, callback) {
 
 export function deleteEntry(id) {
     return fetch('/travelapp/destinations/'+id, {
+        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
         method: 'DELETE'
     })
         .then(function (response) {
