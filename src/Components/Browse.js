@@ -1,23 +1,29 @@
 import React, {Component} from 'react';
-import {fetchall} from "../ServiceClient";
+import {ACCESS_TOKEN, fetchall} from "../Service";
 
 import '../App.css';
 import CountryList from "./CountryList";
 import CityList from "./CityList";
 import CityDestinations from './CityDestinations';
 
+
+
 class Browse extends Component {
     state = {destinations: []}
 
     componentDidMount() {
-        fetch('/travelapp/destinations')
+        fetch('/travelapp/destinations', {
+            headers:{'Authorization': 'Bearer ' + localStorage.getItem(ACCESS_TOKEN)}
+        })
             .then(function (response) {
-                return response.json();
-
+                console.log("Browse, fetch", response)
+                if (response.status===200)
+                    return response.json();
+                console.log("ERROR FETCHING DESTINATIONS: ", response);
             })
             .then(function (json) {
+                console.log("Browse, fetch - json", json)
                 this.setState({destinations: json});
-
             }.bind(this));
     }
 
@@ -47,7 +53,6 @@ class Browse extends Component {
                               key={index} {...this.props}/>)
         }.bind(this));
 
-
         return (
             <div className="Browse">
                 <div  className="countrylistdiv">
@@ -63,6 +68,7 @@ class Browse extends Component {
                     </div>
                 </div>
                 <hr/>
+
 
             </div>
         );

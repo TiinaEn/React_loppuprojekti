@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {ListGroupItem} from 'react-bootstrap';
+import {ACCESS_TOKEN} from "../Service";
 
 
 class SearchResult extends Component {
@@ -10,7 +11,9 @@ class SearchResult extends Component {
     }
 
     fetchDestinations = (foo) => {
-        return fetch('/travelapp/find?n=' + this.props.match.params.searchword)
+        return fetch('/travelapp/find?n=' + this.props.match.params.searchword, {
+            headers: {'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) }
+        })
             .then(function (response) {
                 return response.json();
 
