@@ -112,6 +112,8 @@ class OneDestination extends Component {
                 {/*<input type="submit" value="Update" onClick={this.handleUpdateClick}/>
                 <input type="submit" value="Remove" onClick={this.handleDeleteClick}/>
                 <input type="submit" value="Cancel" onClick={this.handleCancelClick}/>*/}
+                {/*<input className="btn btn-default btn-md" type="submit" value="Remove" onClick={this.handleDeleteClick}/>
+                <input className="btn btn-default btn-md" type="submit" value="Back to Browse" onClick={this.handleCancelClick}/>*/}
             </ListGroup>
                 <div className="content">
                     <h3>Update Entry</h3>
@@ -179,119 +181,15 @@ class OneDestination extends Component {
                                 <input className="form-control" type="url" placeholder="Weblink" value={details.weblink} onChange={this.handleWeblinkChange}/>
                             </div>
                         </div>
-                        {/*
-                    <label>User: </label>
-                    <br/>
-                    <textarea className="formfield" type="text" placeholder="User" onChange={this.handleChange}/>
-                    <textarea type="text" placeholder="User" value={this.state.user} onChange={this.handleUserChange}/>
-                    <br/>
-*/}
-                        <input type="submit" value="Update" onClick={this.handleUpdateClick}/>
+                        
+                        <input className="btn btn-default btn-md" type="submit" value="Remove" onClick={this.handleDeleteClick}/>
+                        <input className="btn btn-default btn-md" type="submit" value="Back to Browse" onClick={this.handleCancelClick}/>
+                        <input className="btn btn-default btn-md" type="submit" value="Update" onClick={this.handleUpdateClick}/>
+                        {/*<input type="submit" value="Update" onClick={this.handleUpdateClick}/>
                         <input type="submit" value="Remove" onClick={this.handleDeleteClick}/>
-                        <input type="submit" value="Return" onClick={this.handleCancelClick}/>
+                        <input type="submit" value="Return" onClick={this.handleCancelClick}/>*/}
                     </form>
                 </div>
-{/*                <Form>
-                    <FormGroup>
-                        <FormControl
-                            componentClass="textarea"
-                            rows={1}
-                            value={details.name}
-                            placeholder="Name"
-                            onChange={this.handleNameChange}
-                        />
-                    </FormGroup>
-                    <div className="form-group">
-                        <div className="col-xs-10">
-                            <select className="form-control" value={this.state.category} onChange={this.handleCategoryChange}>
-                                <option>Choose category</option>
-                                <option>Restaurants</option>
-                                <option>Hotels</option>
-                                <option>Shops</option>
-                                <option>Sights</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <FormGroup>
-                        <FormControl
-                            componentClass="textarea"
-                            rows={1}
-                            value={details.category}
-                            placeholder="Category"
-                            onChange={this.handleCategoryChange}
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <FormControl
-                            componentClass="textarea"
-                            rows={1}
-                            value={details.address}
-                            placeholder="Address"
-                            onChange={this.handleAddressChange}
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <FormControl
-                            componentClass="textarea"
-                            rows={1}
-                            value={details.country}
-                            placeholder="Country"
-                            onChange={this.handleCountryChange}
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <FormControl
-                            componentClass="textarea"
-                            rows={1}
-                            value={details.city}
-                            placeholder="City"
-                            onChange={this.handleCityChange}
-                        />
-                    </FormGroup>
-                    <div className="form-group">
-                        <div className="col-xs-10">
-                            <select className="form-control" value={this.state.rating} onChange={this.handleRatingChange}>
-                                <option>Choose rating</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                    </div>
-                    <FormGroup>
-                        <FormControl
-                            componentClass="textarea"
-                            rows={1}
-                            value={details.rating}
-                            placeholder="Rating"
-                            onChange={this.handleRatingChange}
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <FormControl
-                            componentClass="textarea"
-                            rows={1}
-                            value={details.description}
-                            placeholder="Description"
-                            onChange={this.handleDescriptionChange}
-                        />
-                    </FormGroup>
-                    <FormGroup>
-                        <FormControl
-                            componentClass="textarea"
-                            rows={1}
-                            value={details.weblink}
-                            placeholder="Weblink"
-                            onChange={this.handleWeblinkChange}
-                        />
-                    </FormGroup>
-                    <input type="submit" value="Update" onClick={this.handleUpdateClick}/>
-                    <input type="submit" value="Remove" onClick={this.handleDeleteClick}/>
-                    <input type="submit" value="Return" onClick={this.handleCancelClick}/>
-                </Form>*/}
             </div>
         );
     }

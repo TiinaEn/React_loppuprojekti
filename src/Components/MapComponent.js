@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 /*import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';*/
 import ReactDOM from 'react-dom'
+import MapComponent3 from "./MapComponent3";
 
 
 class MapComponent extends Component {
@@ -22,7 +23,7 @@ class MapComponent extends Component {
 
             var map = new maps.Map(node, mapConfig);
 
-            map.addListener('click', function(event) {
+            /*map.addListener('click', function(event) {
                 placeMarker(event.latLng, map);
             })
 
@@ -37,7 +38,7 @@ class MapComponent extends Component {
                    infoWindow.open(map, marker);
                 });
 
-            }
+            }*/
 
             var infoWindow = new google.maps.InfoWindow({
                 content: '<div>' +
@@ -59,6 +60,8 @@ class MapComponent extends Component {
                content: '<div>Location saved</div>'
             });
 
+
+
         }
     }
 
@@ -72,6 +75,7 @@ class MapComponent extends Component {
         return (
             <div ref="map" style={style}>
                 loading map...
+
             </div>
         )
     }
