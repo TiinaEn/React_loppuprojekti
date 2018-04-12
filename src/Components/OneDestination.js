@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {ListGroup, ListGroupItem,Form,FormGroup,ControlLabel,FormControl} from 'react-bootstrap';
 import {ACCESS_TOKEN, deleteEntry} from "../Service";
 
-import MapComponent from "./MapComponent";
+import MapComponent3 from "./MapComponent3";
 import {GoogleApiWrapper} from "google-maps-react";
 
 import {updateEntry} from "../Service";
@@ -14,9 +14,9 @@ class OneDestination extends Component {
         const queryString = require('query-string');
         const params = queryString.parse(props.location.search);
         const id = params['id'];
-        this.state = {destinations: {name: '', description: ''}, id: id};
+        this.state = {destinations: {}, id: id};
     }
-    state = {destinations: []}
+   /* state = {destinations: []}*/
 
     componentDidMount() {
         const token = localStorage.getItem(ACCESS_TOKEN);
@@ -108,7 +108,7 @@ class OneDestination extends Component {
 
     render() {
         var details = this.state.destinations;
-        /*console.log(details);*/
+       /* console.log(details);*/
         return(
             <div>
             <ListGroup>
@@ -119,6 +119,8 @@ class OneDestination extends Component {
                     <ListGroupItem><b>Rating: </b>{details.rating}/5</ListGroupItem>
                     <ListGroupItem><b>Things to remember: </b>{details.description}</ListGroupItem>
                     <ListGroupItem>{details.weblink}</ListGroupItem>
+                    <ListGroupItem>{details.latitude}</ListGroupItem>
+                    <ListGroupItem>{details.longitude}</ListGroupItem>
                 </div>
                 {/*<input type="submit" value="Update" onClick={this.handleUpdateClick}/>
                 <input type="submit" value="Remove" onClick={this.handleDeleteClick}/>
@@ -205,6 +207,8 @@ class OneDestination extends Component {
                         <input type="submit" value="Remove" onClick={this.handleDeleteClick}/>
                         <input type="submit" value="Return" onClick={this.handleCancelClick}/>*/}
                     </form>
+                    <MapComponent3 google={this.props.google} {...this.props}/>
+
                 </div>
 
             </div>

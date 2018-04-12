@@ -4,6 +4,7 @@ import '../Note.css';
 import MapComponent2 from "./MapComponent2";
 import {createEntry} from "../Service";
 
+
 class CreateEntry extends Component {
 
     constructor(props) {
