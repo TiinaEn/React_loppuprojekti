@@ -20,6 +20,8 @@ class MapComponent2 extends Component {
             const mapConfig = Object.assign({}, {
                 center: {lat: 60, lng: 25},
                 zoom: 5,
+
+
                 mapTypeId: 'roadmap'
             })
 
@@ -30,6 +32,9 @@ class MapComponent2 extends Component {
             var messageWindow;
             var markers = [];
             var self = this;
+            map.setOptions({draggableCursor:'crosshair'});
+
+
 
 
             {/*    <div className="buttons">
@@ -45,23 +50,32 @@ class MapComponent2 extends Component {
                 marker = new google.maps.Marker({
                     position: latLng,
                     map: map,
+
                 });
 
                 var pos = marker.getPosition();
                 console.dir(pos);
                 self.props.setdestcoords(pos);
+                marker = new google.maps.Marker({
+                    position: pos,
+                    map:map
+                })
 
-                markers.push(marker);
+
+              /*  markers.push(marker);*/
                 map.panTo(latLng);
 
-                addAllMarkers(map);
 
-                function addAllMarkers(map) {
+
+
+                /*addAllMarkers(map);*/
+
+/*                function addAllMarkers(map) {
                     for (var i = 0; i < markers.length; i++) {
                         markers[i].setMap(map);
                         console.log(i);
                     }
-                }
+                }*/
 
 
                 google.maps.event.addListener(marker, 'click', function () {

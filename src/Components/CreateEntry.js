@@ -34,7 +34,7 @@ class CreateEntry extends Component {
     }
 
     render() {
-        console.log("Creatgeentry", this.state);
+        console.log("CreateEntrylog", this.state.latitude, this.state.longitude);
         return (
             <div className="xx">
                 <div className="content">

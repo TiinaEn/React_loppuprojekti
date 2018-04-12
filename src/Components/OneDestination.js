@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {ListGroup, ListGroupItem} from 'react-bootstrap';
 import {deleteEntry} from "../ServiceClient";
+import MapComponent from "./MapComponent";
+import {GoogleApiWrapper} from "google-maps-react";
 
 
 class OneDestination extends Component {
@@ -50,6 +52,7 @@ class OneDestination extends Component {
         var details = this.state.destinations;
         console.log(details);
         return(
+            <div>
             <ListGroup>
 
                 <div>
@@ -61,11 +64,16 @@ class OneDestination extends Component {
                 </div>
                 <input type="submit" value="Remove" onClick={this.handleDeleteClick}/>
                 <input type="submit" value="Cancel" onClick={this.handleCancelClick}/>
+
             </ListGroup>
+                <MapComponent google={this.props.google}/>
+            </div>
         );
     }
 
 
 
 }
-export default OneDestination;
+export default GoogleApiWrapper({
+    apiKey: 'AIzaSyAZEa7IBzFg2qOA5xgGRzlDab9zyDnptKs',
+})(OneDestination)
