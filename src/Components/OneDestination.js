@@ -202,7 +202,8 @@ class OneDestination extends Component {
                         <input type="submit" value="Remove" onClick={this.handleDeleteClick}/>
                         <input type="submit" value="Return" onClick={this.handleCancelClick}/>*/}
                     </form>
-                    <MapComponent3 google={this.props.google}/>
+                    <MapComponent3 google={this.props.google} {...this.props}/>
+
                 </div>
 
             </div>
