@@ -10,7 +10,7 @@ class ServiceClient extends Component {
         function fetchall(destinations,callback) {
             return fetch(baseurl + '/destinations/', {
                 method: 'GET',
-                headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
+                headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer ' + localStorage.getItem(ACCESS_TOKEN) },
                 body: JSON.stringify(destinations)
             })
                 .then(function (response) {
@@ -37,7 +37,7 @@ export function createEntry(entry, callback) {
     console.dir(entry)
     fetch("/travelapp/create", {
         method: 'POST',
-        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
+        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer ' + localStorage.getItem(ACCESS_TOKEN) },
         body: JSON.stringify(entry)
 
     })
@@ -49,7 +49,7 @@ export function createEntry(entry, callback) {
 export function updateEntry(destinations, callback) {
     fetch('/travelapp/destinations/modify/'+destinations.id, {
         method: 'POST',
-        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
+        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer ' + localStorage.getItem(ACCESS_TOKEN) },
         body: JSON.stringify(destinations)
     })
         .then((function (response) {
@@ -60,7 +60,7 @@ export function updateEntry(destinations, callback) {
 
 export function deleteEntry(id) {
     return fetch('/travelapp/destinations/delete/'+id, {
-        headers: {'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
+        headers: {'Authorization' : 'Bearer ' + localStorage.getItem(ACCESS_TOKEN) },
         method: 'GET'
     })
         .then(function (response) {
@@ -72,7 +72,7 @@ export function signin(loginRequest) {
     console.log("Accesstoken", ACCESS_TOKEN);
     return fetch(/*baseurl + */"/travelapp/login", {
         method: 'POST',
-        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
+        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer ' + localStorage.getItem(ACCESS_TOKEN) },
         //    mode: "no-cors",
         body: JSON.stringify(loginRequest)
     })
@@ -96,7 +96,7 @@ export function signup (SignupRequest) {
     console.log("Accesstoken", ACCESS_TOKEN);
     return fetch(/*baseurl + */"/travelapp/signup", {
         method: 'POST',
-        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
+        headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer ' + localStorage.getItem(ACCESS_TOKEN) },
         body: JSON.stringify(SignupRequest)
     })
         .then(response => {
