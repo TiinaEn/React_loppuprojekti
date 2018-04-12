@@ -6,7 +6,7 @@ import {ACCESS_TOKEN} from '../Service'
 import {getCurrentUser} from '../helpers/LoginHelper';
 import {Link} from 'react-router-dom';
 import '../App.css';
-import {sigin, signin} from "../Service";
+import {signin} from "../Service";
 import Register from "./Register";
 import {Router, Switch, Route} from 'react-router-dom';
 

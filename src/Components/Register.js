@@ -67,13 +67,13 @@ class Register extends Component {
         signup(signupRequest)
             .then(response => {
                 notification.success({
-                    message: 'Hei vaan',
+                 //   message: 'Hei vaan',
                     description: "Thank you! You're successfully registered. Please Login to continue!",
                 });
-                this.props.history.push("travelapp/login");
+                this.props.history.push("/login");
             }).catch(error => {
             notification.error({
-                message: 'Hei vaan',
+              //  message: 'Hei vaan',
                 description: error.message || 'Sorry! Something went wrong. Please try again!'
             });
         });
