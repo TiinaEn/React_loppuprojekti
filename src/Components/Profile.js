@@ -19,19 +19,19 @@ class Profile extends Component {
                     <div className= "form-group">
                     <label className="control-label col-xs-2">Username: </label>
                     <div className="col-xs-10">
-                        <input className="form-control" type="text" value="Heidi"/>
+                        <input className="form-control" type="text"/>
                     </div>
                 </div>
                     <div className= "form-group">
                         <label className="control-label col-xs-2">Email: </label>
                         <div className="col-xs-10">
-                            <input className="form-control" type="text" value="heidi@heidi.fi"/>
+                            <input className="form-control" type="text"/>
                         </div>
                     </div>
                     <div className= "form-group">
                         <label className="control-label col-xs-2">Password: </label>
                         <div className="col-xs-10">
-                            <input className="form-control" type="text" value="*********"/>
+                            <input className="form-control" type="text"/>
                         </div>
                     </div>
                    </form>
