@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {GoogleApiWrapper} from 'google-maps-react';
 import ReactDOM from 'react-dom';
 import {ACCESS_TOKEN} from "../Service";
 
+//Fetching coordinates for the current destination and showing a marker on a map based on these coordinates.
 
 class MapComponent3 extends Component {
     constructor(props) {
@@ -12,22 +12,6 @@ class MapComponent3 extends Component {
         const id = params['id'];
         this.state = {destinations: {}, id: id};
     }
-
-    /*  componentDidMount() {
-          fetch('/travelapp/destinations/' + this.state.id, {
-              headers: {'Content-Type':'application/json', 'Authorization' : 'Bearer' + localStorage.getItem(ACCESS_TOKEN) },
-              accept: 'application/json'
-          })
-              .then(function (response) {
-                  return response.json();
-
-              })
-              .then(function (json) {
-                  this.setState({destinations: json});
-
-              }.bind(this));
-      };*/
-
 
     componentDidMount() {
         fetch('/travelapp/destinations/' + this.state.id, {
@@ -69,20 +53,11 @@ class MapComponent3 extends Component {
             const node = ReactDOM.findDOMNode(mapRef);
             const mapConfig = Object.assign({}, {
                 center: {lat: 60, lng: 25},
-                zoom:2,
+                zoom:3,
                 mapTypeId: 'roadmap',
             })
 
             var map = new maps.Map(node, mapConfig);
-            // if(this.state.destinations) {
-            //     var lokaatio2 = {lat: this.state.destinations.latitude, lng: this.state.destinations.longitude}
-            //     var marker;
-            //     console.log(lokaatio2);
-            //     marker = new google.maps.Marker({
-            //         position: lokaatio2,
-            //         map: map
-            //     })
-            // }
             this.setState({map: map});
         }
     }
@@ -92,19 +67,15 @@ class MapComponent3 extends Component {
 
         const style = {
             width: '100vw',
-            height: '77vh'
+            height: '100vh'
         }
 
 
         return (
             <div ref="map" style={style}>
                 loading map...
-
-
             </div>
         )
-
-
     }
 }
 
