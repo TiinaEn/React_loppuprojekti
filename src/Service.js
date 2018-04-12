@@ -46,6 +46,25 @@ export function createEntry(entry, callback) {
         }));
 }
 
+export function updateEntry(destinations, callback) {
+    fetch('/travelapp/destinations/'+destinations.id, {
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(destinations)
+    })
+        .then((function (response) {
+            callback();
+        }));
+
+}
+
+export function deleteEntry(id) {
+    return fetch('/travelapp/destinations/'+id, {
+        method: 'DELETE'
+    })
+        .then(function (response) {
+        })
+}
 
 
 export function signin(loginRequest) {

@@ -57,7 +57,7 @@ class Browse extends Component {
             <div className="Browse">
                 <div  className="countrylistdiv">
                     <h1>Destinations</h1>
-                    <h4>Choose a country</h4>
+                    <h4>Choose a destination from the list</h4>
 
                     <div className="col-xs-4">{kaikki}</div>
 
