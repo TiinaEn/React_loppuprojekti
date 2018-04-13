@@ -97,24 +97,6 @@ class Login extends Component {
                             </div>
                         </div>
 
-                {/*<form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="usernameOrEmail">
-                    <ControlLabel>Username</ControlLabel>
-                    <FormControl
-                        autoFocus
-                        type="text"
-                        value={this.state.usernameOrEmail}
-                        onChange={this.handleUsernameChange}
-                    />
-                </FormGroup>*/}
-                 {/*   <FormGroup controlId="password">
-                        <ControlLabel>Password</ControlLabel>
-                        <FormControl
-                            value={this.state.password}
-                            onChange={this.handlePasswordChange}
-                            type="password"
-                        />
-                    </FormGroup>*/}
                     <Button
                         type="submit"
                 //        onClick={this.handleSubmit()}

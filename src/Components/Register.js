@@ -109,32 +109,32 @@ class Register extends Component {
 
                 <form class="form-horizontal" onSubmit={this.handleSignUp}>
                     <div className="form-group" value={this.state.name} onChange={this.handleNameChange}>
-                        <label htmlFor="RegistrationForm" class="control-label col-sm-4">Name</label>
-                        <div class="col-sm-4">
+                        <label htmlFor="RegistrationForm" class="control-label col-sm-5">Name</label>
+                        <div class="col-sm-3">
                         <input type="text" className="form-control"/>
                         </div>
                         </div>
                     <div className="form-group" value={this.state.username} onChange={this.handleUsernameChange}>
-                        <label htmlFor="RegistrationForm" class="control-label col-sm-4">Username</label>
-                        <div class="col-sm-4">
+                        <label htmlFor="RegistrationForm" class="control-label col-sm-5">Username</label>
+                        <div class="col-sm-3">
                         <input type="text" className="form-control"/>
                         </div>
                     </div>
                     <div className="form-group" value={this.state.email} onChange={this.handleEmailChange}>
-                        <label htmlFor="RegistrationForm" class="control-label col-sm-4">Email</label>
-                        <div class="col-sm-4">
+                        <label htmlFor="RegistrationForm" class="control-label col-sm-5">Email</label>
+                        <div class="col-sm-3">
                         <input type="email" className="form-control"/>
                         </div>
                     </div>
                     <div className="form-group" value={this.state.password} onChange={this.handlePasswordChange}>
-                        <label htmlFor="RegistrationForm" class="control-label col-sm-4">Password</label>
-                        <div class="col-sm-4">
+                        <label htmlFor="RegistrationForm" class="control-label col-sm-5">Password</label>
+                        <div class="col-sm-3">
                         <input type="password" className="form-control"/>
                         </div>
                     </div>
                     <div className="form-group" value={this.state.confirmPassword} onChange={this.handlePasswordConChange}>
-                        <label htmlFor="RegistrationForm" class="control-label col-sm-4">Confirm password</label>
-                        <div class="col-sm-4">
+                        <label htmlFor="RegistrationForm" class="control-label col-sm-5">Confirm password</label>
+                        <div class="col-sm-3">
                         <input type="password" className="form-control"/>
                         </div>
                     </div>
