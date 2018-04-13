@@ -13,6 +13,7 @@ class MapComponent3 extends Component {
         this.state = {destinations: {}, id: id};
     }
 
+    //fetching data for one destination from the database
     componentDidMount() {
         fetch('/travelapp/destinations/' + this.state.id, {
             headers: {
@@ -58,13 +59,13 @@ class MapComponent3 extends Component {
             })
 
             var map = new maps.Map(node, mapConfig);
+
+            //adding a marker on a map after the location data is fetched from the database
             this.setState({map: map});
         }
     }
 
     render() {
-
-
         const style = {
             width: '100vw',
             height: '77vh'

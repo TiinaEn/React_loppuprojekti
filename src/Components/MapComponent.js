@@ -24,27 +24,23 @@ class MapComponent extends Component {
             const node = ReactDOM.findDOMNode(mapRef);
             const mapConfig = Object.assign({}, {
                 center: {lat: 60, lng: 25},
-                zoom: 5,
+                zoom: 3,
                 mapTypeId: 'roadmap',
-                Marker: new google.maps.Marker ({
+               /* Marker: new google.maps.Marker ({
                     position: lokaatio,
-                    map: map,
-                })
+                    map: map,*/
+               /* })*/
             })
 
 
 
-            var map = new maps.Map(node, mapConfig);
+ /*
             var lokaatio = {lat: 61.31245, lng: 25.57854}
 
             var marker;
+*/
 
-
-            marker = new google.maps.Marker ({
-                position: lokaatio,
-                map:map
-            })
-            console.log(lokaatio)
+            var map = new maps.Map(node, mapConfig);
 
 
             var infoWindow = new google.maps.InfoWindow({
