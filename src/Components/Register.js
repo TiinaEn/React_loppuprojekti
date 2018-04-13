@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {signup} from '../Service';
+import {signup, updateEntry} from '../Service';
 import {notification} from 'antd';
 
 import '../Register.css';
@@ -66,6 +66,14 @@ class Register extends Component {
         }
     }*/
 
+    handleUpdateClick = (e) => {
+        e.preventDefault();
+        this.props.history.push("/login");
+    }
+
+    returnToLogin = () => {
+        this.props.history.push("/login");
+    }
 
     handleSignUp = event => {
         event.preventDefault();
@@ -143,6 +151,9 @@ class Register extends Component {
                          disabled={!this.validateForm()}
                     >Submit
                     </Button>
+                    <br/>
+                    <br/>
+                    <Button type="submit" value="Update" onClick={this.handleUpdateClick}>Back to Sing In</Button>
                 </form>
             </div>
             </div>

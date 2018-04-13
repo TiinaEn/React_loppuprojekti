@@ -25,14 +25,14 @@ class SearchResult extends Component {
             }.bind(this));
     }
 
-    // async shouldComponentUpdate(nextProps, nextState) {
-    //     console.log("ShouldUpdate?")
-    //     if (!this.state.founddestinationsrendered && nextProps.match.params.searchword === this.props.match.params.searchword)
-    //         return false;
-    //     this.fetchDestinations(true);
-    //     console.log("ShouldUpdate", true);
-    //     return true;
-    // }
+    async shouldComponentUpdate(nextProps, nextState) {
+        console.log("ShouldUpdate?")
+        if (!this.state.founddestinationsrendered && nextProps.match.params.searchword === this.props.match.params.searchword)
+            return false;
+        this.fetchDestinations(true);
+        console.log("ShouldUpdate", true);
+        return true;
+    }
 
     render() {
         this.state.founddestinationsrendered = true;
