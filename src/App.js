@@ -8,7 +8,7 @@ import Browse from './Components/Browse'
 import Profile from './Components/Profile'
 import MapApp from "./Components/MapApp"
 import OneDestination from './Components/OneDestination'
-import skyline from './Components/Skyline0.png'
+import skyline from './Components/Skyline1.png'
 import SearchResult from "./Components/SearchResult";
 import history from './history';
 /*import CityList from './Components/CityList'
