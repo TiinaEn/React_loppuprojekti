@@ -35,7 +35,7 @@ class MapComponent3 extends Component {
 
     setMarker = (destination) => {
         const {google} = this.props;
-        const maps = google.maps;
+        /*const maps = google.maps;*/
         var lokaatio2 = {lat: destination.latitude, lng: destination.longitude}
         var marker;
         console.log(lokaatio2);

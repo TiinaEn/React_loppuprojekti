@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 /*import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';*/
 import ReactDOM from 'react-dom'
-import MapComponent2 from "./MapComponent2";
-import CreateEntry from "./CreateEntry";
+/*import MapComponent2 from "./MapComponent2";
+import CreateEntry from "./CreateEntry";*/
 
 
 class MapComponent extends Component {
@@ -16,6 +16,8 @@ class MapComponent extends Component {
 
     loadMap() {
 
+        var map;
+        var lokaatio;
 
         if (this.props && this.props.google) {
             const {google} = this.props;
@@ -34,6 +36,7 @@ class MapComponent extends Component {
 
 
 
+
  /*
             var lokaatio = {lat: 61.31245, lng: 25.57854}
 
@@ -42,8 +45,11 @@ class MapComponent extends Component {
 
             var map = new maps.Map(node, mapConfig);
 
+            map = new maps.Map(node, mapConfig);
 
-            var infoWindow = new google.maps.InfoWindow({
+
+
+          /*  var infoWindow = new google.maps.InfoWindow({
                 content: '<div>' +
                 '<table>' +
                 '<tr><td>Name:</td><td><input type="text" id="name"/></td></tr>' +
@@ -61,7 +67,7 @@ class MapComponent extends Component {
 
             var messageWindow = new google.maps.InfoWindow({
                 content: '<div>Location saved</div>'
-            });
+            });*/
 
         }
     }

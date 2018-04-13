@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-const baseurl='/travelapp'
+import  {Component} from 'react';
+/*const baseurl='/travelapp'*/
 export const ACCESS_TOKEN = 'accessToken';
 
 class ServiceClient extends Component {
 
 
-    componentDidMount() {
+/*    componentDidMount() {
         const baseurl = '/travelapp';
         function fetchall(destinations,callback) {
             return fetch(baseurl + '/destinations/', {
@@ -17,7 +17,7 @@ class ServiceClient extends Component {
                     callback(response);
                 });
         }
-    }
+    }*/
 
 
   /*  function fetchone(id, callback) {
@@ -32,6 +32,8 @@ class ServiceClient extends Component {
             });
     }*/
 }
+
+export default ServiceClient;
 
 export function createEntry(entry, callback) {
     console.dir(entry)
@@ -101,17 +103,10 @@ export function signup (SignupRequest) {
     })
         .then(response => {
                 if (!response.ok) {
-                    console.log("jotain");
                     console.log(response);
                     return Promise.reject(response.json());
                 }
                 return response.json();
             }
         );
-
-
-  //  export default ServiceClient;
-  //  export function fetchall() {
-
-
 }

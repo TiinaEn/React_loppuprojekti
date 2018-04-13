@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {ACCESS_TOKEN, fetchall} from "../Service";
+import {ACCESS_TOKEN} from "../Service";
 
 import '../App.css';
 import CountryList from "./CountryList";
 import CityList from "./CityList";
-import CityDestinations from './CityDestinations';
+/*import CityDestinations from './CityDestinations';*/
 
 
 
