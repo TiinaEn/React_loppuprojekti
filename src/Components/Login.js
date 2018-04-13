@@ -85,37 +85,19 @@ class Login extends Component {
 
                 <form className="form-horizontal" onSubmit={this.handleSubmit}>
                     <div className="form-group" value={this.state.usernameOrEmail} onChange={this.handleUsernameChange}>
-                        <label htmlFor="usernameOrEmail" className="control-label col-sm-4">Username</label>
-                        <div className="col-sm-4">
+
+                        <label htmlFor="usernameOrEmail" class="control-label col-sm-5">Username</label>
+                        <div class="col-sm-3">
                             <input type="text" className="form-control"/>
                         </div>
                     </div>
-
                     <div className="form-group" value={this.state.password} onChange={this.handlePasswordChange}>
-                        <label htmlFor="usernameOrEmail" className="control-label col-sm-4">Password</label>
-                            <div className="col-sm-4">
+                        <label htmlFor="usernameOrEmail" class="control-label col-sm-5">Password</label>
+                            <div class="col-sm-3">
                                 <input type="password" className="form-control"/>
                             </div>
                         </div>
 
-                {/*<form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="usernameOrEmail">
-                    <ControlLabel>Username</ControlLabel>
-                    <FormControl
-                        autoFocus
-                        type="text"
-                        value={this.state.usernameOrEmail}
-                        onChange={this.handleUsernameChange}
-                    />
-                </FormGroup>*/}
-                 {/*   <FormGroup controlId="password">
-                        <ControlLabel>Password</ControlLabel>
-                        <FormControl
-                            value={this.state.password}
-                            onChange={this.handlePasswordChange}
-                            type="password"
-                        />
-                    </FormGroup>*/}
                     <Button
                         type="submit"
                         disabled={!this.validateForm()}
