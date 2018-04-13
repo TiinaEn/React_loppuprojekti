@@ -57,7 +57,7 @@ class SearchResult extends Component {
         } else {
             return (
                 <div className="searchResult">
-                    <h4>Unfortunately, no results were found. Please try again.</h4>
+                    {/*<h4>Unfortunately, no results were found. Please try again.</h4>*/}
                 </div>
             )
         }
