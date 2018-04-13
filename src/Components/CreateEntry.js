@@ -9,8 +9,7 @@ class CreateEntry extends Component {
 
     constructor(props) {
         super(props);
-        {this.state = {name: '', category: '', address:'', description: '',
-            rating: '', city: '', country: '', weblink: '', latitude: 0, longitude: 0}}
+        {this.state = {name: '', category: '', address:'', description: '', rating: '', city: '', country: '', weblink: '', latitude: 0, longitude: 0}}
     }
 
     goBackToBrowse = () => {

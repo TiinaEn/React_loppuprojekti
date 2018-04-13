@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {GoogleApiWrapper} from 'google-maps-react';
 import ReactDOM from 'react-dom';
-import PlacesAutocomplete from 'react-places-autocomplete';
+/*import PlacesAutocomplete from 'react-places-autocomplete';*/
 import {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 
 
@@ -95,9 +95,9 @@ class MapComponent2 extends Component {
             '</div>'
         });
 
-        var messageWindow = new google.maps.InfoWindow({
+        /*var messageWindow = new google.maps.InfoWindow({
             content: '<div>Location saved</div>'
-        });
+        });*/
 
 
         map.addListener('click', function (event) {      //function for adding a marker on a map
@@ -146,11 +146,11 @@ class MapComponent2 extends Component {
             width: '100vw',
             height: '50vh'
         }
-        const inputProps = {
+        /*const inputProps = {
             value: this.state.address,
             onChange: this.onChange,
             placeholder: 'Search places'
-        }
+        }*/
 
 
         return (

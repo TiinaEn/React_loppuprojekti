@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {ListGroupItem} from 'react-bootstrap';
-import CityList from './CityList';
+/*import CityList from './CityList';*/
 
 
 

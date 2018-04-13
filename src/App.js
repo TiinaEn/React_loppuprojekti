@@ -11,11 +11,11 @@ import OneDestination from './Components/OneDestination'
 import skyline from './Components/Skyline0.png'
 import SearchResult from "./Components/SearchResult";
 import history from './history';
-import CityList from './Components/CityList'
-import CityDestinations from './Components/CityDestinations'
+/*import CityList from './Components/CityList'
+import CityDestinations from './Components/CityDestinations'*/
 import {Link} from 'react-router-dom';
 import Register from './Components/Register';
-import {getCurrentUser} from './helpers/LoginHelper';
+/*import {getCurrentUser} from './helpers/LoginHelper';*/
 import {ACCESS_TOKEN} from './Service';
 
 class App extends Component {
@@ -33,14 +33,13 @@ class App extends Component {
 
                     <Route exact path="/register" component={Register}/>
                     <Route exact path="/login" component={Login}/>
-
                     <Route exact path="/createnew" component={CreateEntry}/>
                     <Route exact path="/browse" component={Browse}/>
                     <Route path="/browse/:country" component={Browse}/>
                     <Route path="/details" component={OneDestination}/>
                     <Route exact path="/profile" component={Profile}/>
 
-                    /*<Route exact path="/travelapp/home" component={MapApp}/>*/
+                   {/* <Route exact path="/home" component={MapApp}/>*/}
                     <Route exact path="/" component={MapApp}/>
 
                     <Route path="/find/:searchword" component={SearchResult}/>
@@ -94,6 +93,7 @@ class Navigation extends Component {
                 <div className="pull-right">
                     <form className="find" onSubmit={this.search}>
                         <input className="rounded" type="text" value={this.state.searchtext} onChange={this.textChanged} placeholder="Search"/>
+                        <button className="btn-link" onClick={this.search}>Search</button>
                         <button className="btn-link" onClick={this.logoutfunction}>SIGN IN / SIGN OUT</button>
                     </form>
                 </div>

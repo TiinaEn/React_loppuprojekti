@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ListGroup, ListGroupItem,Form,FormGroup,ControlLabel,FormControl} from 'react-bootstrap';
+import {ListGroup, ListGroupItem} from 'react-bootstrap';
 import {ACCESS_TOKEN, deleteEntry} from "../Service";
 
 import MapComponent3 from "./MapComponent3";

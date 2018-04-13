@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Form, FormGroup, ControlLabel, ButtonGroup, Button, FormControl, HelpBlock} from 'react-bootstrap';
+import {/*Form, FormGroup, ControlLabel, ButtonGroup,*/ Button/*, FormControl, HelpBlock*/} from 'react-bootstrap';
 import {notification} from 'antd';
 import {login} from '../Service';
 import {ACCESS_TOKEN} from '../Service'
@@ -8,7 +8,8 @@ import {Link} from 'react-router-dom';
 import '../App.css';
 import {signin} from "../Service";
 import Register from "./Register";
-import {Router, Switch, Route} from 'react-router-dom';
+import {/*Router,*/ Switch, Route} from 'react-router-dom';
+
 
 
 class Login extends Component {
@@ -82,17 +83,17 @@ class Login extends Component {
                 <h3> Sign In</h3>
 
 
-                <form class="form-horizontal" onSubmit={this.handleSubmit}>
+                <form className="form-horizontal" onSubmit={this.handleSubmit}>
                     <div className="form-group" value={this.state.usernameOrEmail} onChange={this.handleUsernameChange}>
-                        <label htmlFor="usernameOrEmail" class="control-label col-sm-4">Username</label>
-                        <div class="col-sm-4">
+                        <label htmlFor="usernameOrEmail" className="control-label col-sm-4">Username</label>
+                        <div className="col-sm-4">
                             <input type="text" className="form-control"/>
                         </div>
                     </div>
 
                     <div className="form-group" value={this.state.password} onChange={this.handlePasswordChange}>
-                        <label htmlFor="usernameOrEmail" class="control-label col-sm-4">Password</label>
-                            <div class="col-sm-4">
+                        <label htmlFor="usernameOrEmail" className="control-label col-sm-4">Password</label>
+                            <div className="col-sm-4">
                                 <input type="password" className="form-control"/>
                             </div>
                         </div>
@@ -117,7 +118,6 @@ class Login extends Component {
                     </FormGroup>*/}
                     <Button
                         type="submit"
-                //        onClick={this.handleSubmit()}
                         disabled={!this.validateForm()}
                     >Submit
                     </Button>
